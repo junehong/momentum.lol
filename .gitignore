@@ -1,0 +1,16 @@
+*.data
+*.zip
+*.mp4
+*.pem
+*.log
+*.pyc
+*.pyo
+dist
+*.db
+*.db-journal
+*.psd
+*.exe
+*.swp
+*.csv
+*.sh
+
