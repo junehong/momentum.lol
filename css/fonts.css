@@ -1,9 +1,19 @@
 @font-face {
-  font-family: 'Graublau Web';
-  src: url('fonts/Gotham.otf') format('truetype'), 
+  font-family: "Gotham2";
+  src: url('fonts/Gotham.otf') format('truetype');
 }
 @font-face {
-  font-family: 'SF UI Display Regular';
-  src: url('fonts/SF-UI-Display-Regular.otf') format('truetype'), 
+  font-family: "Gotham2";
+	font-weight: bold;
+  src: url('fonts/Gotham-Bold.otf') format('truetype'); 
+}
+@font-face {
+  font-family: "Gotham2";
+	font-weight: book;
+  src: url('fonts/Gotham-Book.otf') format('truetype'); 
+}
+@font-face {
+  font-family: "SF-UI-Display-Regular";
+  src: url('fonts/SF-UI-Display-Regular.otf') format('truetype');
 }
 

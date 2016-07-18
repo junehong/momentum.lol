@@ -1,0 +1,76 @@
+
+#navBar{
+	position:fixed;
+	z-index:20;
+	top:30px;
+	left:30px;
+	width:660px;
+	color:white;
+}
+
+#navBar ul {
+	float:right;
+}
+
+#navBar li {
+	font-family: "Gotham2";
+	display:inline;
+	font-size:14px;
+	padding-bottom:5px;	
+	margin: 0 40px;
+	border-bottom:3px solid rgba(1,1,1,0);
+	transition: border-bottom 0.4s ease-in;
+    -ms-transition: border-bottom 0.4s ease-in;
+    -moz-transition: border-bottom 0.4s ease-in;
+    -webkit-transition: border-bottom 0.4s ease-in;
+}
+
+#navBar li.selected:not(:first-of-type)  {
+	border-bottom: 3px solid white;
+	transition: border-bottom 0.4s ease-in;
+    -ms-transition: border-bottom 0.4s ease-in;
+    -moz-transition: border-bottom 0.4s ease-in;
+    -webkit-transition: border-bottom 0.4s ease-in;
+}
+
+/* #navBar li:not(:first-of-type):hover { */
+#navBar li:hover {
+	cursor:pointer;
+}
+
+#momentumLogo {
+	float:left;
+	background-image:url('img/momentum.png');
+	background-repeat:no-repeat;
+	background-size:100%;
+	width:150px;
+	height:60px;
+	margin-top:20px;
+}
+
+.verticalDotsContainer {
+	position:fixed;
+	display:table;
+	right: 0;
+	width:20px;
+	height:100%;
+	border: 2px dotted yellow;
+}
+
+.verticalDots {
+ display: table-cell;
+    vertical-align: middle;	
+}
+
+.verticalDots ul {
+	list-style:none;
+	list-style-type:none;
+}
+
+.verticalDots ul > li {
+	color: gray;	
+}
+
+.verticalDots ul > li.selected {
+	color: white;
+}
