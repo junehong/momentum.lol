@@ -10,6 +10,16 @@ var scrolling = false;
 
 
 $(document).ready(function(){
+
+	$('body').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
+	$('#container').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
+
+	// Prevent browser from trying to jump to the last scroll position on a reload (causes tab logic to malfunction).
+	$(window).on('beforeunload', function() {
+		
+		$(window).scrollTop(0);
+	});
+
 	MoveToSlide(0,0);
 	$(window).scroll(function(){
 		lastScrollY = window.scrollY;
@@ -21,15 +31,15 @@ $(document).ready(function(){
 		// console.log('st:'+scrollTop);
 	});
 	
-	 $('body').bind('mousewheel', function(e){
-		deltaScrollY = e.originalEvent.wheelDelta;
+	 $('body').bind('mousewheel DOMMouseScroll, wheel', function(e){
+		deltaScrollY = e.originalEvent.wheelDelta || -e.originalEvent.detail || -e.originalEvent.deltaY;
 		e.preventDefault();
 		//deltaScrollY = window.scrollY - lastScrollY;
+//		console.log('delt:'+deltaScrollY);
 		if (scrolling) {
 			return;
 		}	
 		if (deltaScrollY < 0) { // user scrolled down
-			console.log('try move down from:'+parentSlideIndex+','+childSlideIndex);	
 			if (parentSlideIndex == 0){ // ABOUT
 				if (childSlideIndex < maxAboutSlides-1) { 
 					MoveToSlide(0,childSlideIndex+1);
@@ -46,7 +56,6 @@ $(document).ready(function(){
 				// User could not slide down. Do nothing
 			}
 		} else if (deltaScrollY > 0){ // user scrolled up
-			console.log('try move up from:'+parentSlideIndex+','+childSlideIndex);	
 			if (parentSlideIndex == 0){ // ABOUT
 				if (childSlideIndex > 0) { 
 					MoveToSlide(0,childSlideIndex-1); // Move up one About slide.
@@ -77,7 +86,6 @@ $(document).ready(function(){
 });
 
 function MoveToSlide(p,c){
-	console.log('moving:'+p+','+c);
 	parentSlideIndex = p;
 	childSlideIndex = c; 
 	scrolling = true;
@@ -90,6 +98,12 @@ function MoveToSlide(p,c){
 	if (parentSlideIndex == 0){ // The current slide was "About".
 		 // Fade in the "About" slide.	
 		$('#aboutSlides').css('opacity','1');
+
+		$('#navBar').css('color','white'); // Because background is black on About slide.
+		$('#momentumLogo').css('background-image','url("css/img/momentum_white.png")');
+
+		// Make sure we are scrolled to the TOP.
+		$(window).scrollTop(0);
 
 		// Remove "seleceted" class from all right-hand nav dots.	
 		// then "select" class to appropraiate about dot.
@@ -107,19 +121,24 @@ function MoveToSlide(p,c){
 	
 		// Set the blur of the background based on the child index
 		$('#aboutImage').css('-webkit-filter','blur('+(childSlideIndex * 5)+'px)');
+		$('#aboutImage').css('filter','blur('+(childSlideIndex * 5)+'px)');
 
 		// Move the background image position based on child index
-		var n = '0 -'+(childSlideIndex * 50);
-		$('#aboutImage').css('background-position',n);
+		var n = '-'+(childSlideIndex * 50) + "px";
+		$('#aboutImage').css('background-position-y',n);
 
 		
 	} else if (parentSlideIndex == 1){ // Work slides selected.
 		// Show the work slide opacity 1.
 		$('#workSlides').css('opacity','1');
 
+		// Because background is white on Work slide.
+		$('#navBar').css('color','black'); 
+		$('#momentumLogo').css('background-image','url("css/img/momentum_black.png")');
+		
 		// Calc how far we should scroll for each work child, and animate it.
 		var h = window.innerHeight;
-		var scrollTop = childSlideIndex  * h; 
+		var scrollTop = (childSlideIndex + 1)  * h; 
 		$('body').stop(true,true); 
 		$('body').animate({
 			scrollTop: scrollTop 
@@ -128,6 +147,8 @@ function MoveToSlide(p,c){
 		});
 	} else if (parentSlideIndex == 2){
 		$('#contactSlide').css('opacity','1');	
+		$('#navBar').css('color','white'); // Because background is black on Contact slide.
+		$('#momentumLogo').css('background-image','url("css/img/momentum_white.png")');
 	}
 
 	// If we were moving between about slides, 
@@ -144,12 +165,16 @@ function MoveToSlide(p,c){
 
 	// Set the underline to the appropriate index
 	$( "#navBar ul li").each(function(){
-		$(this).removeClass('selected');
+		$(this).removeClass('selected').removeClass('selected_black');
 	 }); 
-	$('#navBar ul li:nth-child('+(parentSlideIndex+2)+')').addClass('selected');			setTimeout(function() {	scrolling = false;		}, 1500);
+	if (parentSlideIndex == 1) {
+		$('#navBar ul li:nth-child('+(parentSlideIndex+2)+')').addClass('selected_black');			
+	
+	} else { 
+		$('#navBar ul li:nth-child('+(parentSlideIndex+2)+')').addClass('selected');			
+	}	
+	setTimeout(function() {	scrolling = false;		}, 900);
 	return;
 
-	// Moving between work slids works like this:
-		
-//	$( "ul#navBar  li:nth-child("+currentSlideIndex+")" ).addClass('selected'); 
 }
+

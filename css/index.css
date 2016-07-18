@@ -1,12 +1,25 @@
-html, body, #container {
+html {
   font-family: 'SF UI Display Regular';
 	padding: 0;
 	margin: 0;
 	border: 0;
+position: relative;
+    overflow: hidden;
+}
+
+
+body {
+	width:100%;
+	margin:0;
+	position:absolute;
+   overflow-x: hidden;
+    overflow-y: scroll;
 }
 body::-webkit-scrollbar { 
     display: none; 
 }
+
+
 ul {
 	list-style-type:none;
 	list-style: none;
@@ -14,7 +27,11 @@ ul {
 }
 
 #container {
+	margin: 0;
+	padding: 0;
+	border:0;
 	background-color:black;
+	width:100%;
 }
 
 

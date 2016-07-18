@@ -1,3 +1,7 @@
+#parentslides {
+	margin:0;
+}
+
 .slidesParent {
 	transition: opacity 0.4s ease-in;
     -ms-transition: opacity 0.4s ease-in;
@@ -14,15 +18,15 @@
 	width:100%;
 	height:100%;
 	position:absolute;
-	transition: background-position 0.4s ease-in;
-    -ms-transition: background-position 0.4s ease-in;
-    -moz-transition: background-position 0.4s ease-in;
-    -webkit-transition: background-position 0.4s ease-in;
+	transition: background-position-y 0.4s ease-in, filter 0.3s ease-in, -webkit-filter 0.4s ease-in;
+    -ms-transition: background-position-y 0.4s ease-in, filter 0.3s ease-in, -webkit-filter 0.4s ease-in;
+    -moz-transition: background-position-y 0.4s ease-in, filter 0.3s ease-in, -webkit-filter 0.4s ease-in;
+    -webkit-transition: background-position-y 0.4s ease-in, filter 0.3s ease-in, -webkit-filter 0.4s ease-in;
 
 }
 
 #aboutSlides {
-
+	height:100%;
 	opacity :1;
 }
 
@@ -54,14 +58,16 @@
 	background-color: white;
 }
 
-#workSlides > li {
+#workSlides > ul > li {
 	width: 100%;
 	height: 100%;
+	overflow:hidden;
 }
 
 .workImage {
 	width: 960px;
 	height:500px;
+	margin-top: 300px;
 }
 
 #workOne {

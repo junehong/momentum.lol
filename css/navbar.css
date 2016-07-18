@@ -33,6 +33,14 @@
     -webkit-transition: border-bottom 0.4s ease-in;
 }
 
+#navBar li.selected_black:not(:first-of-type)  {
+	border-bottom: 3px solid black;
+	transition: border-bottom 0.4s ease-in;
+    -ms-transition: border-bottom 0.4s ease-in;
+    -moz-transition: border-bottom 0.4s ease-in;
+    -webkit-transition: border-bottom 0.4s ease-in;
+}
+
 /* #navBar li:not(:first-of-type):hover { */
 #navBar li:hover {
 	cursor:pointer;
@@ -40,7 +48,7 @@
 
 #momentumLogo {
 	float:left;
-	background-image:url('img/momentum.png');
+	background-image:url('img/momentum_white.png');
 	background-repeat:no-repeat;
 	background-size:100%;
 	width:150px;
