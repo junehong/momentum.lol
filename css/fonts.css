@@ -1,5 +1,6 @@
 @font-face {
   font-family: "Gotham2";
+	font-weight: normal;
   src: url('fonts/Gotham.otf') format('truetype');
 }
 @font-face {
@@ -8,12 +9,31 @@
   src: url('fonts/Gotham-Bold.otf') format('truetype'); 
 }
 @font-face {
-  font-family: "Gotham2";
-	font-weight: book;
+  font-family: "Gotham_Book";
   src: url('fonts/Gotham-Book.otf') format('truetype'); 
 }
 @font-face {
   font-family: "SF-UI-Display-Regular";
   src: url('fonts/SF-UI-Display-Regular.otf') format('truetype');
 }
+@font-face {
+  font-family: "GothamNarrow-XLight";
+  src: url('fonts/GothamNarrow-XLight.otf') format('truetype');
+}
+
+@font-face {
+  font-family: "GothamNarrow-Light";
+  src: url('fonts/GothamNarrow-Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: "Gotham-Thin";
+  src: url('fonts/Gotham-Thin.otf') format('truetype');
+}
+
+@font-face {
+  font-family: "Gotham-Light";
+  src: url('fonts/Gotham-Light.otf') format('truetype');
+}
+
 

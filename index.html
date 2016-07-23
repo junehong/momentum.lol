@@ -4,6 +4,8 @@
 		<link rel='stylesheet' href='css/index.css' />
 		<link rel='stylesheet' href='css/navbar.css' />
 		<link rel='stylesheet' href='css/slides.css' />
+		<link rel='stylesheet' href='css/about.css' />
+		<link rel='stylesheet' href='css/work.css' />
 		 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="assets/components/jquery.js"><\/script>');</script>
 		<script src="js/main.js"></script> 
@@ -14,7 +16,7 @@
 				<ul>	
 					<li id="momentumLogo"></li>	
 					<li>ABOUT</li>
-					<li>WORK</li>
+					<li>WORKS</li>
 					<li>CONTACT</li>
 				</ul>
 			</div>
@@ -39,11 +41,13 @@
 							<div id="aboutChildTwo"> </div>
 						</li>
 						<li>
-							<div id="aboutChildThree">Last stuff </div>
+							<div class="title"> Last one. </div>
+							<div id="aboutChildThree"> </div>
 						</li>
 					</ul>
 				</li>
 				<li id="workSlides" class="slidesParent">
+					<div id="workBox"></div>
 					<div class="verticalDotsContainer">
 						<div  class="verticalDots" id="workDots">
 							<ul>
@@ -54,15 +58,104 @@
 						</div>
 					</div>
 					<ul>	
-						<li>
-							<div class="workImage" id="workOne"</div>
+						<li id="h"> <!-- Work > Hungry Panda  -->
+							<div class="workContainer" id="hungryPanda_container">
+								<div class="workContainerInner">
+									<div id="hungryPanda_text" class="workText">
+										<div class="workTitle">
+											<div class="workTitleLeft"><h1>HUNGRY PANDA</h1></div>
+											<div class="workTitleRight">iOS App</div>
+										</div>
+										<p>Discover and select foods like a dating. Hungry Panda provides a unique, exciting experience for hungry youngsters who are craving for new and deliciou adventures. Sharing your food journey with your friends and setting up social gatherings with a simple inviation feature, you can turn this everyday headache to pleasant event! </p>
+									</div>
+									<div class="workImage" id="hungryPanda_img"></div>
+								</div>
+							</div>
 						</li> 
-						<li>
-							<div class="workImage" id="workTwo"></div>
+						<li> <!-- Work > Allegro  -->
+							<div class="workContainer" id="allegro_container">
+								<div class="workContainerInner">
+									<div id="allegro_text" class="workText">
+										<div class="workTitle">
+											<div id="allegro_link" class="workLink"><a href="#">VISIT WEBSITE</a></div>
+											<div class="workTitleLeft"><h1>SPECIALS</h1></div>
+											<div class="workTitleRight" id="allegro_titleRight">Allegro Lab / iOS App</div>
+										</div>
+										<p>Do you enjoy eating out? Do you want to enjoy more with less money? Specials apps help you find dining specials and coupons from local restaurants. It collects and ranks deals everyday. This is not one of the typical coupon apps. Focusing on local deals it covers a very extensive</p> 
+									</div>
+									<div class="workImage" id="allegro_img"></div>
+								</div>
+							</div>
 						</li> 
-						<li>
-							<div class="workImage" id="workThree"></div>
-						</li> 
+						<li> <!-- Work > UE BOOM  -->
+							<div class="workContainer" id="ue_container">
+								<div class="workContainerInner">
+									<div id="ue_text" class="workText">
+										<div class="workTitle">
+											<div id="ue_link" class="workLink"><a href="#">VISIT WEBSITE</a></div>
+											<div class="workTitleLeft"><h1>UE BOOM</h1></div>
+											<div class="workTitleRight" id="ue_titleRight">Logitech / iOS App</div>
+										</div>
+										<p>Music goes social! UE BOOM 2 is the 360-degree wireless Bluetooth speaker that blasts loud, insanely great sound with deep, powerful bass. We created the companion app that controls the volume, equalizer, and mixer. The app helps users enjoy the continuing brand excitements too on their phone.</p> 
+									</div>
+									<div class="workImage" id="ue_img"></div>
+								</div>
+							</div>
+						</li>  
+						<li> <!-- Work > SpeechMonk  -->
+							<div class="workContainer" id="speechMonk_container">
+								<div class="workContainerInner">
+									<div id="speechMonk_text">
+										<div class="workTitle" id="speechMonk_title">
+											<div id="speechMonk_link" class="workLink"><a href="#">VISIT WEBSITE</a></div>
+											<div class="workTitle2">	
+												<h1>SPEECHMONK</h1>
+												<h3>SpeechMonk.io</h3>
+											</div>
+										</div>
+										<p>
+SpeechMonk is the english exercise platform that helps non-native English learners improve their spoken lagnuage through an exercise platform and free one-minute speech content.</p> 
+									</div>
+									<div class="workImage2">
+										<div id="speechMonk_img"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li> <!-- Work > Super Math World  -->
+							<div class="workContainer" id="smw_container">
+								<div class="workContainerInner">
+									<div id="smw_text">
+										<div class="workTitle" id="smw_title">
+											<div id="smw_link" class="workLink"><a href="#">VISIT WEBSITE</a></div>
+											<div class="workTitle2">	
+												<h1>SUPER MATH WORLD</h1>
+												<h3>supermathworld.com</h3>
+											</div>
+										</div>
+										<p> Super Math World is a fully immersive 3-D game platform for students and teachers to learn and pracitice elementary mathematics. It also provides tools for teachers to create and customize their own content and lesson plans.</p>
+									</div>
+									<div class="workImage2">
+										<div id="smw_img"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li> <!-- Work > UE BOOM  -->
+							<div class="workContainer" id="peer_container">
+								<div class="workContainerInner">
+									<div id="peer_text">
+										<div class="workTitle">
+											<div id="peer_link" class="workLink"><a href="#">VISIT WEBSITE</a></div>
+											<div class="workTitleLeft"><h1>PEER.IM</h1></div>
+											<div class="workTitleRight" id="peer_titleRight">iOS App</div>
+										</div>
+										<p>Peer.im is an Enterprise Instant Messenger for team and customer communication. The Santa Clara based startup creates an ideal business communicaiton solution that enables the internal and external everyday conversation easy and seamless. We worked on their brand identity, landing page, and desktop and mobile interface design. </p>
+									</div>
+									<div class="workImage" id="peer_img"></div>
+								</div>
+							</div>
+						</li>  
 					</ul>
 				</li>
 				<li id="contactSlide" class="slidesParent">	

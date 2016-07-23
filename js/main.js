@@ -1,14 +1,14 @@
 var parentSlideIndex = 0; // About, Work, Contact. 3 only
 var childSlideIndex = 0; // About has 3, Work as 3, Contact has only 1.
 var maxAboutSlides = 3;
-var maxWorkSlides = 3;
+var maxWorkSlides = 6;
 var deltaScrollY = 0;
 var lastScrollY = 0;
 var numSlides = 3; // gotta be a more elegant way than to hardcode the number of slides. I guess classing each slide div and then counting them? Meh.
 var scrolling = false;
 
 
-
+var resizeTimeoutFn;
 $(document).ready(function(){
 
 	$('body').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
@@ -20,12 +20,14 @@ $(document).ready(function(){
 		$(window).scrollTop(0);
 	});
 
-	MoveToSlide(0,0);
+	MoveToSlide(1,0);
 	$(window).scroll(function(){
 		lastScrollY = window.scrollY;
 	});
 	$(window).resize(function(){
 		var h = window.innerHeight;
+		resizeTimeoutFn = setTimeout(function(){MoveToSlide(parentSlideIndex,childSlideIndex);},100);
+//
 		//var scrollTop = currentSlideIndex * h; 
 		//$('body').scrollTop(h * scrollTop);
 		// console.log('st:'+scrollTop);
@@ -137,7 +139,7 @@ function MoveToSlide(p,c){
 		$('#momentumLogo').css('background-image','url("css/img/momentum_black.png")');
 		
 		// Calc how far we should scroll for each work child, and animate it.
-		var h = window.innerHeight;
+		var h = $('#h').height(); 
 		var scrollTop = (childSlideIndex + 1)  * h; 
 		$('body').stop(true,true); 
 		$('body').animate({

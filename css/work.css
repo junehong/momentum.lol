@@ -1,0 +1,328 @@
+#workSlides {
+	opacity: 0;
+	background-color: white;
+	font-family: "Gotham2";
+}
+
+#workBox {
+	position:fixed;
+	top:0;
+	left:0;
+	border:15px solid white;
+	width: calc(100% - 30px);
+	height:calc(100% - 30px);
+	background-color:transparent;
+	z-index:30;
+}
+#workSlides > ul > li {
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+}
+
+.workTop {
+}
+
+.workContainer {
+	position:relative;
+	padding-top:80px;
+}
+
+.workContainerInner {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.workContainerInner p {
+	top:50px;
+}
+
+.workText p {
+	top:110px;
+}
+
+.workImage {
+	width:100%;
+	height:100%;
+	background-size:contain;
+	background-repeat:no-repeat;
+	margin-top: 0px;
+}
+
+.workImage2 {
+	position:absolute;
+	right:0;
+	width:60%;
+	height:100%;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-image:url('img/computer_bg.png');
+	
+}
+
+
+.workTitle {
+	color:white;
+	position:relative;
+	left: 20px;
+	top: 90px;
+}
+.workTitle div {
+	position:absolute;
+	bottom:0;
+}
+
+.workTitleLeft {
+	height:54px;
+}
+
+.workTitleRight {
+	font-family:"Gotham-Light";
+	font-weight:normal;
+	left: 290px;
+}
+
+.workTitle2 {
+	left: 0;
+}
+
+.workTitle2 h3 {
+	font-family:"Gotham2";
+	font-size:12px;
+}
+
+.workLink {
+	position:absolute;
+	font-size:12px;
+	text-align:center;
+	line-height:40px;
+	right:40px;
+	width:120px;
+	height:40px;
+	border: 1px solid white;
+	color:white;
+}
+.workLink a { 
+	text-decoration:none;
+	color:white;
+}
+.workLink a:visited { 
+	color:#ccc;
+}
+
+/* Slide 1 Hungry Panda */
+#hungryPanda_container {
+	background-color:#14181D;
+}
+
+#hungryPanda_text {
+	width:100%;
+	height:150px;
+	color:white;
+	background-color:#14181D;
+}
+
+#hungryPanda_text  p {
+	position:relative;
+	width:920px;
+	margin:0 auto;
+	font-weight:normal;
+	color:White;
+	font-family:"Gotham-Light";
+}
+
+#hungryPanda_img {
+	background-color:#14181D;
+	background-image:url('img/work_hungry_panda.png');
+}
+
+/* Slide 2 Allegro */
+
+#allegro_container {
+	background-color:#ADACAC;
+}
+
+#allegro_text {
+	width:100%;
+	height:150px;
+	color:white;
+	background-color:#ADACAC;
+}
+
+#allegro_text  p {
+	position:relative;
+	width:920px;
+	margin:0 auto;
+	font-weight:normal;
+	color:White;
+	font-family:"Gotham-Light";
+}
+
+#allegro_titleRight {
+	left: 190px;
+	
+}
+
+#allegro_img {
+	background-color:#ADACAC;
+	background-image:url('img/work_allegro.png');
+}
+
+
+/* Slide 2 UE BOOM */
+
+#ue_container {
+	background-color:#2A2A2A;
+}
+
+#ue_text {
+	width:100%;
+	height:150px;
+	color:white;
+	background-color:#2A2A2A;
+}
+
+#ue_text  p {
+	position:relative;
+	width:920px;
+	margin:0 auto;
+	font-weight:normal;
+	color:White;
+	font-family:"Gotham-Light";
+}
+
+#ue_titleRight {
+	left: 190px;
+	
+}
+
+#ue_img {
+	background-color:#2A2A2A;
+	background-image:url('img/work_ue_boom.png');
+}
+
+
+/* Slide 3 SpeechMonk */
+
+#speechMonk_container {
+	background-color:#37C69C;
+	height:100%;
+	position:relative;
+	overflow:hidden;
+}
+
+#speechMonk_title {
+	top:120px;
+	left:0;
+}
+
+#speechMonk_text {
+	height:150px;
+	color:white;
+	background-color:#37C69C;
+}
+
+#speechMonk_text  p {
+	position:relative;
+	width:40%;
+	top:112px;
+	left:0px;
+	font-weight:normal;
+	color:White;
+	font-family:"Gotham-Light";
+}
+
+#speechMonk_titleRight {
+	left: 190px;
+	
+}
+
+#speechMonk_img {
+	background-size:contain;
+	background-repeat:no-repeat;
+	position:absolute;
+	width:68%;
+	height:68%;
+	right:16%;
+	top:3%;
+	background-image:url('img/work_speechmonk.png');
+}
+
+/* Slide 4 Super Math World */
+
+#smw_container {
+	background-color:#FF3D31;
+	height:100%;
+	position:relative;
+	overflow:hidden;
+}
+
+#smw_title {
+	top:120px;
+	left:0;
+}
+
+#smw_text {
+	height:150px;
+	color:white;
+	background-color:#FF3D31;
+}
+
+#smw_text  p {
+	position:relative;
+	width:40%;
+	top:112px;
+	left:0px;
+	font-weight:normal;
+	color:White;
+	font-family:"Gotham-Light";
+}
+
+#smw_titleRight {
+	left: 190px;
+	
+}
+
+#smw_img {
+	background-size:contain;
+	background-repeat:no-repeat;
+	position:absolute;
+	width:68%;
+	height:68%;
+	right:16%;
+	top:3%;
+	background-image:url('img/work_smw.png');
+}
+
+
+/* Slide 5 PEER IM*/
+#peer_container {
+	background-color:#52C2CF;
+}
+
+#peer_titleRight {
+	left: 160px;
+	
+}
+
+
+#peer_text {
+	width:100%;
+	height:150px;
+	color:white;
+	background-color:#52C2CF;
+}
+
+#peer_text  p {
+	position:relative;
+	width:920px;
+	margin:0 auto;
+	font-weight:normal;
+	color:White;
+	font-family:"Gotham-Light";
+}
+
+#peer_img {
+	background-color:#52C2CF;
+	background-image:url('img/work_peer.png');
+}

@@ -2,20 +2,25 @@
 #navBar{
 	position:fixed;
 	z-index:20;
-	top:30px;
-	left:30px;
-	width:660px;
+	padding-top:30px;
+	padding-left:30px;
+	padding-bottom:30px;
+/*	width:660px; */
 	color:white;
+	width:100%;
+	background-color:white;
 }
 
 #navBar ul {
-	float:right;
+	height:20px;
+	width:660px;
+	float:left;
 }
 
 #navBar li {
 	font-family: "Gotham2";
 	display:inline;
-	font-size:14px;
+	font-size:12px;
 	padding-bottom:5px;	
 	margin: 0 40px;
 	border-bottom:3px solid rgba(1,1,1,0);
