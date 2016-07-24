@@ -10,34 +10,38 @@ var scrolling = false;
 
 var resizeTimeoutFn;
 $(document).ready(function(){
+	MoveToSlide(1,0);
 
 	$('body').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
 	$('#container').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
-
-	// Prevent browser from trying to jump to the last scroll position on a reload (causes tab logic to malfunction).
+	$('#downArrowAbout2').click(function(){
+		// This only exists on about 1 (index 0,1) so scroll appropriately
+		MoveToSlide(parentSlideIndex,childSlideIndex+1); //
+	});
+	$('#downArrowAbout3').click(function(){
+		// This only exists on about 2( index 0,2 ) so scroll appropriately
+		MoveToSlide(1,0); 
+	});
+	// prevent browser from trying to jump to the last scroll position on a reload (causes tab logic to malfunction).
 	$(window).on('beforeunload', function() {
 		
 		$(window).scrollTop(0);
 	});
 
-	MoveToSlide(2,0);
 	$(window).scroll(function(){
 		lastScrollY = window.scrollY;
 	});
 	$(window).resize(function(){
 		var h = window.innerHeight;
-		resizeTimeoutFn = setTimeout(function(){MoveToSlide(parentSlideIndex,childSlideIndex);},100);
+		MoveToSlide(parentSlideIndex,childSlideIndex);
+		//resizeTimeoutFn = setTimeout(function(){MoveToSlide(parentSlideIndex,childSlideIndex);},100); // a short time after user finishes resizing window, move to the appropriate slide.
 //
-		//var scrollTop = currentSlideIndex * h; 
-		//$('body').scrollTop(h * scrollTop);
-		// console.log('st:'+scrollTop);
 	});
 	
-	 $('body').bind('mousewheel DOMMouseScroll, wheel', function(e){
+	// Detect when user gave scroll input.
+	 $('body').bind('mousewheel DOMMouseScroll, wheel', function(e){ 
 		deltaScrollY = e.originalEvent.wheelDelta || -e.originalEvent.detail || -e.originalEvent.deltaY;
 		e.preventDefault();
-		//deltaScrollY = window.scrollY - lastScrollY;
-//		console.log('delt:'+deltaScrollY);
 		if (scrolling) {
 			return;
 		}	
@@ -144,11 +148,17 @@ function MoveToSlide(p,c){
 		// Calc how far we should scroll for each work child, and animate it.
 		var scrollTop = (childSlideIndex + 1)  * h; 
 		$('body').stop(true,true); 
+		if ($('body').scrollTop() < h) $('body').scrollTop(h); // "snap" to the first work slide, if scrolling down from about.
 		$('body').animate({
 			scrollTop: scrollTop 
 		}, {
 			duration: 500
 		});
+		
+		// Set the right-hand list nav ui.
+		$('.verticalDots > ul > li > div').each(function(){ $(this).removeClass('selected'); }); 
+		$('.verticalDots > ul li:nth-child('+(childSlideIndex+1)+') > div').addClass('selected');			
+
 	} else if (parentSlideIndex == 2){
 		$('#contactSlide').css('opacity','1');	
 		$('#navBar').css('color','black'); // Because background is black on Contact slide.

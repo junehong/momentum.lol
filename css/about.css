@@ -11,16 +11,19 @@
     -ms-transition: background-position-y 0.4s ease-in, filter 0.3s ease-in, -webkit-filter 0.4s ease-in;
     -moz-transition: background-position-y 0.4s ease-in, filter 0.3s ease-in, -webkit-filter 0.4s ease-in;
     -webkit-transition: background-position-y 0.4s ease-in, filter 0.3s ease-in, -webkit-filter 0.4s ease-in;
-
 }
 
 #aboutSlides {
 	height:100%;
+	overflow:hidden;
 	opacity :1;
 }
 
 #aboutSlides > ul > li {
 	opacity:0;
+	position:absolute;
+	height:100%;
+	width:100%;
 	transition: opacity 0.4s ease-in;
     -ms-transition: opacity 0.4s ease-in;
     -moz-transition: opacity 0.4s ease-in;
@@ -28,24 +31,94 @@
 
 }
 
-#aboutSlides .title {
+#aboutSlides .titleContainer {
 	opacity:1;
-  width: 407px;
-  height: 65px;
+	width:100%;
+	height:100%;
   font-size: 48px;
   line-height: 1.35;
   text-align: center;
   color: #ffffff;
-	margin: 0 auto;
-	top:40%;
 	display:block;
-	position:relative;
+	position:absolute;
 }
 
+#aboutSlides .title {
+  height: 65px;
+	margin: 0 auto;
+	position:relative;
+	font-family:"Gotham2";
+	color:white;
+}
 
+#about1 .title {
+	top:40%;
+}
 
+#about2 .title {
+	top:30%;
+}
 
+#about2 .downArrowContainer {
+	position:absolute;
+	bottom:calc(0% + 50px);
+	width:100%;
+}
+#downArrow {
+	background-image:url('img/downarrow.png');
+	position:relative;
+	z-index:40;
+	width:20px;	
+	height:12px;
+	margin:0 auto;
+	bottom:calc(0% + 50px);
+	display:block;
+}
+#downArrow:hover {
+	cursor:pointer;
+}
 
+#about3 .title {
+	top:20%;
+}
+
+#about2 .aboutText {
+	position:relative;
+	width:960px;
+	margin: 0 auto;
+	top: 40%;
+	
+	font-family:"Gotham-Light";
+	font-size:14px;
+	text-align:center;	
+	color:#D8D8D8;
+	
+}
+
+#about3 .aboutText {
+	position:relative;
+	display:inline-block;
+	font-size:13px;
+	line-height:20px;
+	width:290px;
+	height: 130px;
+	padding:15px;
+	overflow:hidden;
+	text-align:left;
+	font-family:"Gotham-Light";
+
+}
+#about3 .aboutText h2 {
+	font-family:"Gotham2";
+	font-weight:bold;
+	font-size:14px;
+}
+#about3TextContainer{
+	position:relative;
+	margin:0 auto;
+	width:1024px;
+	top:20%;
+}
 .background_img {
 	opacity:.7;
 	width:100%;
@@ -99,6 +172,3 @@
 }
 
 
-#verticalDots ul {
-	list-style:none;
-}
