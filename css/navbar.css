@@ -6,9 +6,13 @@
 	padding-left:30px;
 	padding-bottom:30px;
 /*	width:660px; */
-	color:white;
+	color:black;
 	width:100%;
 	background-color:white;
+	transition: background-color 0.4s ease-in;
+    -ms-transition: background-color 0.4s ease-in;
+    -moz-transition: background-color 0.4s ease-in;
+    -webkit-transition: background-color 0.4s ease-in;	
 }
 
 #navBar ul {

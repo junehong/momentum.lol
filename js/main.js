@@ -20,7 +20,7 @@ $(document).ready(function(){
 		$(window).scrollTop(0);
 	});
 
-	MoveToSlide(1,0);
+	MoveToSlide(2,0);
 	$(window).scroll(function(){
 		lastScrollY = window.scrollY;
 	});
@@ -96,12 +96,14 @@ function MoveToSlide(p,c){
 	$('#aboutSlides').css('opacity','0');	
 	$('#workSlides').css('opacity','0');	
 	$('#contactSlide').css('opacity','0');	
+	var h = $('#workSlides > ul > li').first().height(); // #get height of a typical work slide based on first li. Needed for scrolling to Nth work slide or Contact slide.
 
 	if (parentSlideIndex == 0){ // The current slide was "About".
 		 // Fade in the "About" slide.	
 		$('#aboutSlides').css('opacity','1');
 
 		$('#navBar').css('color','white'); // Because background is black on About slide.
+		$('#navBar').css('background-color','transparent'); //
 		$('#momentumLogo').css('background-image','url("css/img/momentum_white.png")');
 
 		// Make sure we are scrolled to the TOP.
@@ -136,10 +138,10 @@ function MoveToSlide(p,c){
 
 		// Because background is white on Work slide.
 		$('#navBar').css('color','black'); 
+		$('#navBar').css('background-color','white'); 
 		$('#momentumLogo').css('background-image','url("css/img/momentum_black.png")');
 		
 		// Calc how far we should scroll for each work child, and animate it.
-		var h = $('#h').height(); 
 		var scrollTop = (childSlideIndex + 1)  * h; 
 		$('body').stop(true,true); 
 		$('body').animate({
@@ -149,8 +151,18 @@ function MoveToSlide(p,c){
 		});
 	} else if (parentSlideIndex == 2){
 		$('#contactSlide').css('opacity','1');	
-		$('#navBar').css('color','white'); // Because background is black on Contact slide.
-		$('#momentumLogo').css('background-image','url("css/img/momentum_white.png")');
+		$('#navBar').css('color','black'); // Because background is black on Contact slide.
+		$('#navBar').css('background-color','white'); 
+		$('#momentumLogo').css('background-image','url("css/img/momentum_black.png")');
+		var scrollTop = (maxWorkSlides)  * h + $('#aboutImage').innerHeight(); 
+		$('body').stop(true,true); 
+		$('body').scrollTop(scrollTop - h); 
+		$('body').animate({
+			scrollTop: scrollTop 
+		}, {
+			duration: 500
+		});
+	
 	}
 
 	// If we were moving between about slides, 
@@ -169,7 +181,7 @@ function MoveToSlide(p,c){
 	$( "#navBar ul li").each(function(){
 		$(this).removeClass('selected').removeClass('selected_black');
 	 }); 
-	if (parentSlideIndex == 1) {
+	if (parentSlideIndex == 1 || parentSlideIndex == 2) {
 		$('#navBar ul li:nth-child('+(parentSlideIndex+2)+')').addClass('selected_black');			
 	
 	} else { 
