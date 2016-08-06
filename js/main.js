@@ -1,7 +1,7 @@
 var parentSlideIndex = 0; // About, Work, Contact. 3 only
 var childSlideIndex = 0; // About has 3, Work as 3, Contact has only 1.
 var maxAboutSlides = 3;
-var maxWorkSlides = 6;
+var maxWorkSlides = 5;
 var deltaScrollY = 0;
 var lastScrollY = 0;
 var numSlides = 3; // gotta be a more elegant way than to hardcode the number of slides. I guess classing each slide div and then counting them? Meh.
@@ -29,7 +29,7 @@ $(document).ready(function(){
 		});
 	});
 
-	MoveToSlide(0,0);
+	MoveToSlide(1,0);
 
 	$('body').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
 	$('#container').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');

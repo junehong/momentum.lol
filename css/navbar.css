@@ -1,4 +1,4 @@
-
+/* http://bradsknutson.com/blog/css-sliding-underline/ */
 #navBar{
 	position:fixed;
 	z-index:20;
@@ -53,6 +53,8 @@
 /* #navBar li:not(:first-of-type):hover { */
 #navBar li:hover {
 	cursor:pointer;
+	color:white;
+	
 }
 
 #momentumLogo {
@@ -87,14 +89,14 @@
 
 .verticalDots ul > li {
 	height:100%;
-	color: gray;	
 	text-align:center;
 }
 
 .verticalDots ul > li > div {
 	width:6px;	
 	height:6px;
-	background-color:gray;
+	background-color: rgba(125,125,125,0.3);	
+	/* background-color:gray; */
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
