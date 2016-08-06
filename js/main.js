@@ -127,7 +127,7 @@ function MoveToSlide(p,c){
 
 		$('#navBar').css('color','white'); // Because background is black on About slide.
 		$('#navBar').css('background-color','transparent'); //
-		$('#momentumLogo').css('background-image','url("css/img/momentum_white.png")');
+		$('#momentumLogo').css('background-image','url("css/img/logo_white.svg")');
 
 		// Make sure we are scrolled to the TOP.
 		$(window).scrollTop(0);
@@ -162,7 +162,7 @@ function MoveToSlide(p,c){
 		// Because background is white on Work slide.
 		$('#navBar').css('color','black'); 
 		$('#navBar').css('background-color','white'); 
-		$('#momentumLogo').css('background-image','url("css/img/momentum_black.png")');
+		$('#momentumLogo').css('background-image','url("css/img/logo_black.svg")');
 		
 		// Calc how far we should scroll for each work child, and animate it.
 		var scrollTop = (childSlideIndex + 1)  * h; 
@@ -182,7 +182,7 @@ function MoveToSlide(p,c){
 		$('#contactSlide').css('opacity','1');	
 		$('#navBar').css('color','black'); // Because background is black on Contact slide.
 		$('#navBar').css('background-color','white'); 
-		$('#momentumLogo').css('background-image','url("css/img/momentum_black.png")');
+		$('#momentumLogo').css('background-image','url("css/img/logo_black.svg")');
 		var scrollTop = (maxWorkSlides)  * h + $('#aboutImage').innerHeight(); 
 		$('body').stop(true,true); 
 		$('body').scrollTop(scrollTop - h); 
