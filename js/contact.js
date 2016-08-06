@@ -2,38 +2,28 @@
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
 }
-function postContactToGoogle(){
-	var name = $('#name').val();
-	var email = $('#email').val();
-	var feed = $('#message').val();
-	if (true){ //(name !== "") && (email !== "") && ((feed !== "") && (validateEmail(email)))) {
-		$.ajax({
-			url: "https://docs.google.com/spreadsheets/d/1Apy6bzPZjlx0fQkkGjM46RBu4joNLR0Id7aM8giHhRs/formResponse",
-
-//			url: "https://docs.google.com/yourFormURL/formResponse",
-			data: {"entry.1" : name, "entry.3" : email, "entry.4": feed},
-			type: "POST",
-			dataType: "xml",
-			statusCode: {
-				0: function (){
-
-					$('#name').val("");
-					$('#email').val("");
-					$('#message').val("");
-	
-					//Success message
-				},
-				200: function (){
-					$('#name').val("");
-					$('#email').val("");
-					$('#message').val("");
-					//Success Message
-				}
-			}
-		});
-	}
-	else {
-		console.log('no');
-		//Error message
+function saveContact(){
+		$('#emailError').css('display','none');
+		$('#nameError').css('display','none');
+	if (validateEmail($('#email').val()) && $('#name').val() != "Your Name"){
+			var name = $('#name').val();
+			var email = $('#email').val();
+			var message = $('#message').val();
+			var myData = {"name" : name, "email" : email, "message": message};
+			$.ajax({
+				url: "contact.php",
+				//url: "https://docs.google.com/forms/d/19nnHJID3OwZsOsIxymsSmORnua58wTBsh8P2b1uqkfs/formResponse",
+				data: myData,
+				type: 'POST',
+				success:function(jsonString){
+					data= JSON.parse(jsonString);
+					if (data['success']) alert(data['success']); 
+					if (data['error']) alert(data['error']); 
+				} 
+			});
+	} else {
+		if (!validateEmail($('#email').val())) $('#emailError').css('display','block');
+		if ($('#name').val() == "Your Name") $('#nameError').css('display','block');
 	}
 }
+
