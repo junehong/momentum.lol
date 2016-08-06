@@ -10,7 +10,7 @@ var scrolling = false;
 
 var resizeTimeoutFn;
 $(document).ready(function(){
-	MoveToSlide(1,0);
+	MoveToSlide(0,0);
 
 	$('body').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
 	$('#container').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
