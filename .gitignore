@@ -25,3 +25,5 @@ static/pdf/
 *.swo
 *.csv
 *.sh
+*.DS_STORE
+.DS_STORE
