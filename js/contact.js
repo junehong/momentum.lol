@@ -35,7 +35,7 @@ function saveContact(){
 			var email = $('#email').val();
 			var select = $( "#select option:selected" ).text();
 			var message = $('#message').val();
-			var myData = {"name" : name, "email" : email, "message": message};
+			var myData = {"name" : name, "email" : email, "message": message, "select" : select};
 			$.ajax({
 				url: "contact.php",
 				//url: "https://docs.google.com/forms/d/19nnHJID3OwZsOsIxymsSmORnua58wTBsh8P2b1uqkfs/formResponse",
