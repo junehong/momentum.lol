@@ -35,9 +35,9 @@ $(document).ready(function(){
 		lastScrollY = window.scrollY;
 	});
 	$(window).resize(function(){
-		var h = window.innerHeight;
-		MoveToSlide(parentSlideIndex,childSlideIndex);
-		//resizeTimeoutFn = setTimeout(function(){MoveToSlide(parentSlideIndex,childSlideIndex);},100); // a short time after user finishes resizing window, move to the appropriate slide.
+		clearTimeout(resizeTimeoutFn);
+	//	MoveToSlide(parentSlideIndex,childSlideIndex);
+		resizeTimeoutFn = setTimeout(function(){MoveToSlide(parentSlideIndex,childSlideIndex);},1000); // a short time after user finishes resizing window, move to the appropriate slide.
 //
 	});
 	
@@ -168,7 +168,7 @@ function MoveToSlide(p,c){
 		// Show the white fx screen if scrolling *between* work slides, but not in or out of work slides.
 		if ((dir == 1 && childSlideIndex != 0) || (dir == -1 && childSlideIndex != maxWorkSlides - 1)){ // this would == false if moving from about or contact slides to workslides. 
 			console.log('offset:'+offset);
-			WhiteSheetFX(dir,300,1000);// pauseDuration,whiteSheetDuration);	
+			WhiteSheetFX(dir,100,1000);// pauseDuration,whiteSheetDuration);	
 			$('body').animate({	
 				scrollTop: scrollTopTarget - h * dir + offset }, 
 				scrollDuration/2, 
