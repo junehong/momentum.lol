@@ -48,3 +48,52 @@ button:hover {
 	cursor:pointer;
 }
 
+#contactAfter {
+	display:none;
+	width:720px;
+	font-family:"Gotham-Light";
+	margin: 0 auto;
+	margin-top:70px;
+	color: #333333;
+	text-align:center;	
+}
+
+#contactAfter .checkmark {
+	background-image:url('img/checkmark.svg');
+	width:75px;
+	height:60px;
+	background-size:cover;
+	margin: 0 auto;
+}
+
+#contactAfter h1 {
+	font-size:32px;
+	font-family:Gotham-Black;
+	letter-spacing:1.5px;
+}
+
+#contactAfter p {
+	font-size:21px;
+	font-weight:normal;
+}
+
+
+#contactAfter a {
+	font-size: 13px;
+	line-height:13px;
+	border: 1px solid #333333;
+	color: #333;
+	padding: 15px 35px;
+	text-decoration:none;
+	display:block;
+	width:95px;
+	margin: 0 auto;
+	font-family:Gotham;
+	font-weight:bold;
+}
+
+#contactAfter a:hover {
+	text-decoration:none;
+	color:#F57a00;
+}
+

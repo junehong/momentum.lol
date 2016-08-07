@@ -11,7 +11,7 @@ var shiftPadding = 100; // This is the amount each slide moves up or down betwee
 var resizeTimeoutFn;
 $(document).ready(function(){
 //	MoveToSlide(1,4);
-	MoveToSlide(0,0);
+	MoveToSlide(2,0);
 
 
 	// Highlight all text when user selects input field

@@ -17,8 +17,11 @@ function saveContact(){
 				type: 'POST',
 				success:function(jsonString){
 					data= JSON.parse(jsonString);
-					if (data['success']) alert(data['success']); 
-					if (data['error']) alert(data['error']); 
+					if (data['success']) {
+						// alert(data['success']); 
+						$('#contactInner').hide();
+						$('#contactAfter').show();
+					} else if (data['error']) alert(data['error']); 
 				} 
 			});
 	} else {
