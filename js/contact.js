@@ -1,4 +1,29 @@
- function validateEmail(email) {
+$(document).ready(function(){
+	// Highlight all text when user selects input field
+	$("input[type='text']").focus(function () {
+	   $(this).select();
+		$(this).css('color','#333');
+	});
+
+	$("textarea").focus(function() {
+		var $this = $(this);
+		$this.select();
+		$(this).css('color','#333');
+
+		// Work around Chrome's little problem
+		$this.mouseup(function() {
+			// Prevent further mouseup intervention
+			$this.unbind("mouseup");
+			return false;
+		});
+	});
+	
+	
+
+
+}); 
+
+function validateEmail(email) {
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
 }
@@ -8,6 +33,7 @@ function saveContact(){
 	if (validateEmail($('#email').val()) && $('#name').val() != "Your Name"){
 			var name = $('#name').val();
 			var email = $('#email').val();
+			var select = $( "#select option:selected" ).text();
 			var message = $('#message').val();
 			var myData = {"name" : name, "email" : email, "message": message};
 			$.ajax({

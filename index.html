@@ -210,7 +210,7 @@ SpeechMonk is the english exercise platform that helps non-native English learne
 				<li id="contactSlide" class="slidesParent">
 					<div id="contactInner">
 						<h1> CONTACT </h1>
-						Drop a line if you are interested in hiring, joining, and talking to us
+						<p>Drop a line if you are interested in hiring, joining, and talking to us</p>
 						<div id="form" class="contact-us-form">
 								
 							<form id="contactForm" target="_self" onsubmit="" action="javascript: saveContact()">
@@ -218,6 +218,11 @@ SpeechMonk is the english exercise platform that helps non-native English learne
 								<div id="nameError" style="display:none;color:red;">Please let us know who you are!</div>
 								<input id="email" type="text" name="email" value="Your Email">
 								<div id="emailError" style="display:none;color:red;">Invalid email address. Use the format 'name@domain.com'</div>
+								<select id="select">
+								  <option value=1>Interested in project reachout</option>
+								  <option value=2>Need help with an existing project</option>
+								  <option value=3>General inquiry</option>
+								</select>
 								<textarea id="message" name="message">Message</textarea>
 									<button id="send" type="submit">
 										SUBMIT

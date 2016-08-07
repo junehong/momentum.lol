@@ -14,23 +14,6 @@ $(document).ready(function(){
 	MoveToSlide(0,0);
 
 
-	// Highlight all text when user selects input field
-	$("input[type='text']").focus(function () {
-	   $(this).select();
-	});
-
-	$("textarea").focus(function() {
-		var $this = $(this);
-		$this.select();
-
-		// Work around Chrome's little problem
-		$this.mouseup(function() {
-			// Prevent further mouseup intervention
-			$this.unbind("mouseup");
-			return false;
-		});
-	});
-
 
 	$('body').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
 	$('#container').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
