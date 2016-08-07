@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 	$('body').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
 	$('#container').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
-	$('#downArrowAbout2').click(function(){
+	$('.downArrow').click(function(){
 		// This only exists on about 1 (index 0,1) so scroll appropriately
 		MoveToSlide(parentSlideIndex,childSlideIndex+1); //
 	});
@@ -131,7 +131,19 @@ function MoveToSlide(p,c){
 		$( "#aboutSlides > ul li").each(function(){
 			$(this).css('opacity','0');
 		 }); 
+	
+		// move text down a little, and then animate it moving to the correct position and opacity
+
 		$('#aboutSlides > ul li:nth-child('+(childSlideIndex+1)+')').css('opacity','1'); 
+		var targetTopPosition = parseInt($('#aboutSlides > ul li:nth-child('+(childSlideIndex+1)+') .aboutText').css('top'));
+		var startTopPosition = targetTopPosition + 30;
+		$('#aboutSlides > ul li:nth-child('+(childSlideIndex+1)+') .aboutText')
+			.css('opacity',0)
+			.css('top',startTopPosition+"px")
+			.animate({
+				opacity : 1, top : targetTopPosition }, "slow", $.easing['easeInSine'] );
+
+
 		// Set the blur of the background based on the child index
 		$('#aboutImage').css('-webkit-filter','blur('+(childSlideIndex * 5)+'px)');
 		$('#aboutImage').css('filter','blur('+(childSlideIndex * 5)+'px)');
@@ -292,3 +304,16 @@ function WhiteSheetFX(dir,pauseTime,duration){
 			);
 	}
 }
+
+
+
+// Easing function extended from basic jquery easing
+// suggested from http://stackoverflow.com/questions/5207301/jquery-easing-functions-without-using-a-plugin
+$.easing.jswing = $.easing.swing;
+
+$.extend($.easing,
+{
+    easeInSine: function (x, t, b, c, d) {
+        return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
+    }
+});

@@ -60,12 +60,12 @@
 	top:30%;
 }
 
-#about2 .downArrowContainer {
+.downArrowContainer {
 	position:absolute;
 	bottom:calc(0% + 50px);
 	width:100%;
 }
-#downArrow {
+.downArrow {
 	background-image:url('img/downarrow.png');
 	position:relative;
 	z-index:40;
@@ -75,7 +75,7 @@
 	bottom:calc(0% + 50px);
 	display:block;
 }
-#downArrow:hover {
+.downArrow:hover {
 	cursor:pointer;
 }
 
