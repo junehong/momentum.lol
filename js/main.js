@@ -6,10 +6,11 @@ var deltaScrollY = 0;
 var lastScrollY = 0;
 var numSlides = 3; // gotta be a more elegant way than to hardcode the number of slides. I guess classing each slide div and then counting them? Meh.
 var scrolling = false;
-
+var shiftPadding = 100; // This is the amount each slide moves up or down between the white screen transition phase. The slide shifts this much as the white one is coming across
 
 var resizeTimeoutFn;
 $(document).ready(function(){
+	MoveToSlide(1,4);
 
 
 	// Highlight all text when user selects input field
@@ -29,7 +30,6 @@ $(document).ready(function(){
 		});
 	});
 
-	MoveToSlide(1,0);
 
 	$('body').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
 	$('#container').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
@@ -110,11 +110,14 @@ $(document).ready(function(){
 	
 });
 
+var allowScrollingTimeout;
 function MoveToSlide(p,c){
 	parentSlideIndex = p;
 	childSlideIndex = c; 
+	if (scrolling) return;
 	scrolling = true;
-
+	clearTimeout(allowScrollingTimeout);
+	allowScrollingTimeout = setTimeout(function(){ scrolling = false; }, 1200);
 	// Hide slides by opactiy "0". We'll set the current parent slide opacity to "1" in a sec.	
 	$('#aboutSlides').css('opacity','0');	
 	$('#workSlides').css('opacity','0');	
@@ -145,7 +148,6 @@ function MoveToSlide(p,c){
 			$(this).css('opacity','0');
 		 }); 
 		$('#aboutSlides > ul li:nth-child('+(childSlideIndex+1)+')').css('opacity','1'); 
-	
 		// Set the blur of the background based on the child index
 		$('#aboutImage').css('-webkit-filter','blur('+(childSlideIndex * 5)+'px)');
 		$('#aboutImage').css('filter','blur('+(childSlideIndex * 5)+'px)');
@@ -165,15 +167,46 @@ function MoveToSlide(p,c){
 		$('#momentumLogo').css('background-image','url("css/img/logo_black.svg")');
 		
 		// Calc how far we should scroll for each work child, and animate it.
-		var scrollTop = (childSlideIndex + 1)  * h; 
+		var scrollTopTarget = (childSlideIndex + 1)  * h - shiftPadding; 
 		$('body').stop(true,true); 
-		if ($('body').scrollTop() < h) $('body').scrollTop(h); // "snap" to the first work slide, if scrolling down from about.
-		$('body').animate({
-			scrollTop: scrollTop 
-		}, {
-			duration: 500
-		});
-		
+		var dir = $('body').scrollTop() > scrollTopTarget ? -1 : 1; // determine if we were sliding up or down. "1" is scrolling "down"
+		if ($('body').scrollTop() < h && childSlideIndex == 0) {
+			$('body').scrollTop(h - shiftPadding +  $('#header').outerHeight()); // "snap" to the first work slide, if scrolling down from about.
+			console.log('snap');
+			dir = 1; // also override 'dir' in this case because the comparitive logic doesnt work for the first case (scrolltop is still smaller since we haven't actually scrolled down the page during about navigation)
+		}
+		var offset = shiftPadding / 2 * dir;
+
+		// SmoothScroll 50 px towards destination, skip to 50 px from destination and pause while white screen happens, then smoothscroll remaining 50px 
+		var scrollDuration = 1000;
+		var whiteSheetDuration = scrollDuration * 2;
+		var pauseDuration = 200;	
+		// Show the white fx screen if scrolling *between* work slides, but not in or out of work slides.
+		if ((dir == 1 && childSlideIndex != 0) || (dir == -1 && childSlideIndex != maxWorkSlides - 1)){ // this would == false if moving from about or contact slides to workslides. 
+			console.log('offset:'+offset);
+			WhiteSheetFX(dir,300,1000);// pauseDuration,whiteSheetDuration);	
+			$('body').animate({	
+				scrollTop: scrollTopTarget - h * dir + offset }, 
+				scrollDuration/2, 
+				function (){ // After initial scroll, 
+					$(this)
+					.scrollTop(scrollTopTarget - offset) // skip to "offset=50px" from target
+					.delay(pauseDuration) // to sync up with white sheet animation
+					.animate({		
+						scrollTop: scrollTopTarget 		},
+						scrollDuration/2  );
+					}
+			);
+		} else {
+			// Scroll "normally" without the white sheet fx
+			console.log('norm scroll');
+			$('body').animate({		
+				scrollTop: scrollTopTarget 		},
+				scrollDuration/2 ); 
+					
+		}
+
+				
 		// Set the right-hand list nav ui.
 		$('.verticalDots > ul > li > div').each(function(){ $(this).removeClass('selected'); }); 
 		$('.verticalDots > ul li:nth-child('+(childSlideIndex+1)+') > div').addClass('selected');			
@@ -190,7 +223,9 @@ function MoveToSlide(p,c){
 			scrollTop: scrollTop 
 		}, {
 			duration: 500
-		});
+		}, function () { 
+				// 	console.log('fin2');scrolling = false;
+			 }); // this never gets called, can't figure out why?
 	
 	}
 
@@ -216,8 +251,60 @@ function MoveToSlide(p,c){
 	} else { 
 		$('#navBar ul li:nth-child('+(parentSlideIndex+2)+')').addClass('selected');			
 	}	
-	setTimeout(function() {	scrolling = false;		}, 900);
 	return;
 
 }
 
+function WhiteSheetFX(dir,pauseTime,duration){
+	// Uses a white sheet that is the same hieght as the "Work tab" height, 
+	// positions it at the top or bottom of screen (totally off screen)
+	// then lerps it onto the screen in full, pauses for a second,
+	// then lerps totally off screen in the same direction.
+
+	var targetHeight = $('#workSlides > ul > li').first().height(); // #get height of a typical work slide based on first li. Needed for scrolling to Nth work slide or Contact slide.
+	var headerHeight = $('#navBar').outerHeight();
+	$('#whiteSheet')
+		.stop() // stop previous animations,
+		.css('height',targetHeight + "px") // make sure it height is correct,
+		.css('display','block'); // show it
+		
+	if (dir == 1){ 
+		// scrolling downwards. Position white screen at bottom.
+		$('#whiteSheet').css('top',targetHeight + headerHeight + "px");
+
+		// animate it moving upwards
+		$('#whiteSheet').animate({ 
+				top : headerHeight  }, 
+				duration/2, 
+				function() { 
+					$(this).delay(pauseTime) //hold a sec
+					.animate({
+						top : -targetHeight + headerHeight },
+						duration/2,
+						function (){	
+							$(this).hide(); // hide when done
+						} 
+					); 
+				}
+			);
+	} else {
+		// scrolling upwardss. Position white screen at top.
+		$('#whiteSheet').css('top', -targetHeight  + headerHeight + "px");
+
+		// animate it moving upwards
+		$('#whiteSheet').animate({ 
+				top : headerHeight  }, 
+				duration/2, 
+				function() { 
+					$(this).delay(pauseTime) //hold a sec
+					.animate({
+						top : targetHeight + headerHeight },
+						duration/2,
+						function (){	
+							$(this).hide(); // hide when done
+						} 
+					); 
+				}
+			);
+	}
+}

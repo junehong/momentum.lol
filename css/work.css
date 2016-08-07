@@ -17,7 +17,7 @@
 }
 #workSlides > ul > li {
 	width: 100%;
-	height: 100%;
+	height: calc(100% + 100px);
 	overflow:hidden;
 }
 
@@ -327,4 +327,12 @@
 #peer_img {
 	background-color:#52C2CF;
 	background-image:url('img/work_peer.png');
+}
+
+#whiteSheet { /* This will cover work slides during slide transitions. */
+	display:none;
+	position:fixed;
+	width:100%;
+	background-color:white;
+	z-index:15;	
 }
