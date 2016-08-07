@@ -10,8 +10,8 @@ var shiftPadding = 100; // This is the amount each slide moves up or down betwee
 
 var resizeTimeoutFn;
 $(document).ready(function(){
-	MoveToSlide(1,2);
-//	MoveToSlide(0,0);
+//	MoveToSlide(1,2);
+	MoveToSlide(0,0);
 
 
 
