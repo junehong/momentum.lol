@@ -40,36 +40,39 @@
 }
 
 .workText p {
-	top:110px;
+	top:90%;
+	font-size: 14px;
+	line-height: 24px;
 }
 
 .workImage {
-	width:920px;
-	height:50%;
+	width:960px;
+	height:60%;
 	position:absolute;
-	bottom:0;
+	bottom:-46px;
 	background-size:contain;
 	background-repeat:no-repeat;
 }
 
 .workImage2 {
 	position:absolute;
-	width:70%;
-	height:40%;
+	width:960px;
+	height:42%;
 	bottom:25%; /* this seems to work */
 	background-size:contain;
 	background-repeat:no-repeat;
-	background-image:url('img/computer_bg.png');
+	background-image:url('img/computer_bg_1.png');
+	background-position: center; 
 }
 
 .workImage2 div {
 	background-size:contain;
 	background-repeat:no-repeat;
+	background-position: center; 
 	position:absolute;
-	width:82%;
-	height:82%;
-	right:4.5%;	
-	top:6%;
+	width:965px;
+	height:80.8%;
+	top:7.1%;
 	border:0;
 	outline:0;
 }
@@ -79,7 +82,7 @@
 	color:white;
 	position:relative;
 	left: 20px;
-	top: 90px;
+	top: 70%;
 }
 .workTitle div {
 	position:absolute;
@@ -92,8 +95,6 @@
 
 .workTitleRight {
 	font-family:"Gotham-Light";
-	font-weight:normal;
-	left: 290px;
 }
 
 .workTitle2 {
@@ -111,19 +112,28 @@
 	text-align:center;
 	line-height:40px;
 	right:40px;
-	width:120px;
+	width:160px;
 	height:40px;
 	top:-40px;
-	border: 1px solid white;
+	border: 2px solid white;
 	color:white;
 }
+
+.workLink:hover { 
+	cursor:pointer;
+	background-color:#fff;
+}
+
+.workLink:hover a {
+		color:#444;
+}
+
 .workLink a { 
 	text-decoration:none;
 	color:white;
 }
-.workLink a:visited { 
-	color:#ddd;
-}
+
+
 
 /* Slide 1 Hungry Panda */
 #hungryPanda_container {
@@ -150,6 +160,11 @@
 	background-color:#14181D;
 	background-image:url('img/work_hungry_panda.png');
 }
+#hungryPanda_titleRight {
+	left: 290px;
+	
+}
+
 
 /* Slide 2 Allegro */
 
@@ -174,7 +189,7 @@
 }
 
 #allegro_titleRight {
-	left: 190px;
+	left: 180px;
 	
 }
 
@@ -207,7 +222,7 @@
 }
 
 #ue_titleRight {
-	left: 190px;
+	left: 180px;
 	
 }
 
@@ -227,7 +242,7 @@
 }
 
 #speechMonk_title {
-	top:120px;
+	top:130px;
 	left:0;
 }
 
@@ -250,7 +265,7 @@
 
 
 #speechMonk_titleRight {
-	left: 250px;
+	left: 260px;
 	
 }
 
@@ -285,7 +300,7 @@
 }
 
 #smw_titleRight {
-	left: 320px;
+	left: 380px;
 	
 }
 

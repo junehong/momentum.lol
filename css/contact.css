@@ -9,7 +9,7 @@
 
 #contactInner {
 	width:720px;
-	font-family:Gotham-Light;
+	font-family:"Gotham-Light";
 	margin: 0 auto;
 	text-align:center;
 	color:#333333;
@@ -17,27 +17,30 @@
 
 #contactInner h1 {
 	font-size:40px;
-	font-family:Gotham-Black;
+	font-family:"Gotham-Black";
 	letter-spacing:1.5px;
 }
 
 #contactInner p {
 	font-size:22px;	
-	font-family:Gotham;
+	font-family:"Gotham";
 	font-weight:lighter;
 	color:#333333;
 }
+
+
 
 #contactForm input  {
 	border: 0;
 	display:block;
 	width:100%;
 	font-size:15px;
-	height:40px;
+	height:56px;
 	padding:15px;
 	margin:5px;
 	color:#999;
 	margin-bottom:10px;
+	font-family:"Gotham-Book";	
 }
 
 #contactForm select {
@@ -47,12 +50,14 @@
     overflow: hidden;
     background-color: #fff;
 	border: 0;
+	border-radius:0;
 	font-size:15px;
 	margin-left:5px;
 	margin-bottom:8px;
-	height:40px;
-	color:#999;
+	height:56px;
 	padding-left:12px;
+	color:#333;
+	font-family:"Gotham-Book";	
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -60,8 +65,8 @@
 	-moz-appearance: none;
 
 
-	 background-image:url('img/downarrow.svg');
-	background-position: calc(100% - 20px) 10px;
+	background-image:url('img/downarrow.svg');
+	background-position: calc(100% - 20px) 16px;
 	background-size: 12px 22px;
 	background-repeat:no-repeat;
 
@@ -70,29 +75,36 @@
 	font-size:15px;
 	color:#999;
 	width:100%;
-	height:200px;
+	height:150px;
 	border: 0;
 	padding: 15px;
 	margin: 5px;
+	font-family:"Gotham-Book";	
 }
 
 #contactForm button {
 	font-family:"Gotham2";
 	float:left;
-	padding:16px 55px;
-	font-weight:bold;
+	margin:5px;
+	right:40px;
+	width:160px;
+	height:48px;
+	top:-40px;
 	font-size:12px;
-	background-color:white;
+	text-align:center;
+	background-color:#EEEEEE;
 	color:#333;
 	border: 2px solid #333;
-	margin-left:5px;
-	margin-top:5px;
-
+	
 }
 
-button:hover {
+#contactForm button:hover {
 	cursor:pointer;
+	background-color:#333;
+	color:#fff;
+	font-family:"Gotham_Book";
 }
+
 
 #contactAfter {
 	display:none;

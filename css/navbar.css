@@ -53,7 +53,6 @@
 /* #navBar li:not(:first-of-type):hover { */
 #navBar li:hover {
 	cursor:pointer;
-	color:white;
 	
 }
 
@@ -66,6 +65,13 @@
 	height:60px;
 	margin-top:20px;
 }
+
+
+
+#momentumLogo:hover {
+	opacity:0.2;
+}
+
 
 .verticalDotsContainer {
 	position:fixed;

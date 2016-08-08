@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<title>MOMENTUM</title>
 		<link rel="icon" href="css/img/favicon.ico?" type="image/x-icon">
 		<link rel='stylesheet' href='css/fonts.css' />
 		<link rel='stylesheet' href='css/index.css' />
@@ -106,7 +107,7 @@ We will be your first designer and creative partner to help you succeed in achie
 									<div id="hungryPanda_text" class="workText">
 										<div class="workTitle">
 											<div class="workTitleLeft"><h1>HUNGRY PANDA</h1></div>
-											<div class="workTitleRight">iOS App</div>
+											<div class="workTitleRight" id="hungryPanda_titleRight">iOS App</div>
 										</div>
 										<p>Discover and select foods like a dating. Hungry Panda provides a unique, exciting experience for hungry youngsters who are craving for new and deliciou adventures. Sharing your food journey with your friends and setting up social gatherings with a simple inviation feature, you can turn this everyday headache to pleasant event! </p>
 									</div>
@@ -119,7 +120,7 @@ We will be your first designer and creative partner to help you succeed in achie
 								<div class="workContainerInner">
 									<div id="allegro_text" class="workText">
 										<div class="workTitle">
-											<div id="allegro_link" class="workLink"><a href="#">VISIT WEBSITE</a></div>
+											<!--div id="allegro_link" class="workLink"><a href="#">VISIT WEBSITE</a></div-->
 											<div class="workTitleLeft"><h1>SPECIALS</h1></div>
 											<div class="workTitleRight" id="allegro_titleRight">Allegro Lab / iOS App</div>
 										</div>
@@ -134,11 +135,11 @@ We will be your first designer and creative partner to help you succeed in achie
 								<div class="workContainerInner">
 									<div id="ue_text" class="worktext">
 										<div class="worktitle">
-											<div id="ue_link" class="worklink"><a href="#">VISIT WEBSITE</a></div>
-											<div class="worktitleleft"><h1>ue boom</h1></div>
-											<div class="worktitleright" id="ue_titleright">logitech / ios app</div>
+											<!--div id="ue_link" class="worklink"><a href="#">VISIT WEBSITE</a></div-->
+											<div class="worktitleleft"><h1>UE BOOM</h1></div>
+											<div class="worktitleright" id="ue_titleright">logitech / iOS App</div>
 										</div>
-										<p>music goes social! ue boom 2 is the 360-degree wireless bluetooth speaker that blasts loud, insanely great sound with deep, powerful bass. we created the companion app that controls the volume, equalizer, and mixer. the app helps users enjoy the continuing brand excitements too on their phone.</p> 
+										<p>Music goes social! ue boom 2 is the 360-degree wireless bluetooth speaker that blasts loud, insanely great sound with deep, powerful bass. We created the companion app that controls the volume, equalizer, and mixer. The app helps users enjoy the continuing brand excitements too on their phone.</p> 
 									</div>
 									<div class="workimage" id="ue_img"></div>
 								</div>
@@ -149,11 +150,11 @@ We will be your first designer and creative partner to help you succeed in achie
 								<div class="workContainerInner">
 									<div id="speechMonk_text" class="worktext">
 										<div class="worktitle">
-											<div id="speechMonk_link" class="worklink"><a href="#">VISIT WEBSITE</a></div>
-											<div class="worktitleleft"><h1>SpeechMonk</h1></div>
-											<div class="worktitleright" id="speechMonk_titleright">speechmonk.io</div>
+											<div id="speechMonk_link" class="worklink"><a href="http://www.speechmonk.io" target="_blank">VISIT WEBSITE</a></div>
+											<div class="worktitleleft"><h1>SPEECHMONK</h1></div>
+											<div class="worktitleright" id="speechMonk_titleright">Talkative / Desktop</div>
 										</div>
-										<p>SpeechMonk is the english exercise platform that helps non-native English learners improve their spoken language through an exercise platform and free one-minute speech content.</p> 
+										<p>SpeechMonk is an English exercise platform for non-native speakers to improve their English proficiency. Using speech recognition, sound visualization, and deep learning technologies, it helps users enhance accents, pronunciation, and intonation with 10 mins exercise a day.</p> 
 
 									</div>
 									<div class="workImage2">
@@ -167,9 +168,9 @@ We will be your first designer and creative partner to help you succeed in achie
 								<div class="workContainerInner">
 									<div id="smw_text" class="worktext">
 										<div class="worktitle">
-											<div id="smw_link" class="workLink"><a href="#">VISIT WEBSITE</a></div>
-											<div class="worktitleleft"><h1>Super Math World</h1></div>
-											<div class="worktitleright" id="smw_titleRight">supermathworld.com</div>
+											<div id="smw_link" class="workLink"><a href="http://www.supermathworld.com" target="_blank">VISIT WEBSITE</a></div>
+											<div class="worktitleleft"><h1>SUPER MATH WORLD</h1></div>
+											<div class="worktitleright" id="smw_titleRight">Imaginary Number / Desktop</div>
 										</div>
 										<p> Super Math World is a fully immersive 3-D game platform for students and teachers to learn and pracitice elementary mathematics. It also provides tools for teachers to create and customize their own content and lesson plans.</p>
 									</div>
@@ -204,13 +205,14 @@ We will be your first designer and creative partner to help you succeed in achie
 								
 							<form id="contactForm" target="_self" onsubmit="" action="javascript: saveContact()">
 								<input id="name" type="text" name="name" value="Your Name">
-								<div id="nameError" style="display:none;color:red;">Please let us know who you are!</div>
+								<div id="nameError" style="display:none;color:red;font-size:13px;">Please let us know who you are!</div>
 								<input id="email" type="text" name="email" value="Your Email">
-								<div id="emailError" style="display:none;color:red;">Invalid email address. Use the format 'name@domain.com'</div>
+								<div id="emailError" style="display:none;color:red;font-size:13px;height:26px">Invalid email address. Use the format 'name@domain.com'</div>
 								<select id="select">
-								  <option value=1>Interested in project reachout</option>
-								  <option value=2>Need help with an existing project</option>
-								  <option value=3>General inquiry</option>
+								  <option value=1>I have an idea! Tell us more about what you would like to build. </option>
+								  <option value=2>I need a help with an existing project.</option>
+								  <option value=3>I am interested in working for MOMENTUM - yes! we are looking for talents.</option>
+								  <option value=4>Not sure what to say but just waant to chat - of course, you do :D</option>
 								</select>
 								<textarea id="message" name="message">Message</textarea>
 									<button id="send" type="submit">
