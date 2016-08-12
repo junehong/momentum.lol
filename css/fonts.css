@@ -4,7 +4,7 @@
   src: url('fonts/Gotham.otf') format('truetype');
 }
 @font-face {
-  font-family: "Gotham2";
+  font-family: "Gotham-Bold";
 	font-weight: bold;
   src: url('fonts/Gotham-Bold.otf') format('truetype'); 
 }
@@ -13,7 +13,7 @@
   src: url('fonts/Gotham-Black.otf') format('truetype'); 
 }
 @font-face {
-  font-family: "Gotham_Book";
+  font-family: "Gotham-Book";
   src: url('fonts/Gotham-Book.otf') format('truetype'); 
 }
 @font-face {

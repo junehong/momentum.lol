@@ -5,41 +5,61 @@
 	padding-top:30px;
 	padding-left:30px;
 	padding-bottom:30px;
-/*	width:660px; */
 	color:black;
 	width:100%;
 	background-color:transparent;
-	transition: background-color 0.2s ease-in;
-    -ms-transition: background-color 0.2s ease-in;
-    -moz-transition: background-color 0.2s ease-in;
-    -webkit-transition: background-color 0.2s ease-in;	
+
 }
 
 #navBar ul {
 	height:20px;
-	width:660px;
 	float:left;
+	width:100%;
 }
 
 #navBar li {
-	font-family: "Gotham2";
-	display:inline;
-	font-size:12px;
-	padding-bottom:5px;	
-	margin: 0 40px;
-	border-bottom:3px solid rgba(1,1,1,0);
-	transition: border-bottom 0.2s ease-in;
-    -ms-transition: border-bottom 0.2s ease-in;
-    -moz-transition: border-bottom 0.2s ease-in;
-    -webkit-transition: border-bottom 0.2s ease-in;
+	margin: 0 60px;
+	font-family: "Gotham-Bold";
+	font-size:14px;
 }
 
+.topMenu {
+	display:inline-block;
+	width: 0px;
+	transition: width 0.5s ease-in-out;
+    white-space: nowrap;
+  
+  }
+
+.topMenu:hover {
+	cursor:pointer;
+	width: 50px;
+	
+}
+
+.topMenu.slected:not(:first-of-type)  {
+	border-bottom:3px solid rgba(1,1,1,0);
+	width:50px;
+	transition: width 0.5s ease-in-out;
+    white-space: nowrap;
+ 
+ 
+}
+
+
+.topMenu.selected_black:not(:first-of-type) {
+	border-bottom:3px solid rgba(0,0,0,0);
+}
+
+
+/*
 #navBar li.selected:not(:first-of-type)  {
 	border-bottom: 3px solid white;
-	transition: border-bottom 0.2s ease-in;
-    -ms-transition: border-bottom 0.2s ease-in;
-    -moz-transition: border-bottom 0.2s ease-in;
-    -webkit-transition: border-bottom 0.2s ease-in;
+	width:0px;
+	transition: width 0.2s ease-in;
+    -ms-transition: width 0.2s ease-in;
+    -moz-transition: width 0.2s ease-in;
+    -webkit-transition: width 0.2s ease-in;
 }
 
 #navBar li.selected_black:not(:first-of-type)  {
@@ -51,10 +71,6 @@
 }
 
 /* #navBar li:not(:first-of-type):hover { */
-#navBar li:hover {
-	cursor:pointer;
-	
-}
 
 #momentumLogo {
 	float:left;
@@ -62,15 +78,37 @@
 	background-repeat:no-repeat;
 	background-size:100%;
 	width:150px;
-	height:60px;
-	margin-top:20px;
+	height:20px;
+	opacity:1;
+
 }
 
 
 
 #momentumLogo:hover {
+	cursor:pointer;
 	opacity:0.2;
+	
+	transition: opacity .3s ease-in;
+   	-ms-transition: opacity .3s ease-in;
+   	-moz-transition: opacity .3s ease-in;
+   	-webkit-transition: opacity .3s ease-in;
 }
+
+
+
+
+
+#langSelector {
+	float:right;
+	width:60px;
+	font-size: 13px;
+	font-family: "Gotham-Book";
+	padding-top:2px;
+	padding-right:90px;	
+	
+}
+
 
 
 .verticalDotsContainer {

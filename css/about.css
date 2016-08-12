@@ -1,7 +1,6 @@
 
 #aboutImage {
-	background-image:url('img/bg_lightbulbs.png');
-	background-position:center;
+	background-image:url('img/b8_lights.jpg');
 	background-size:cover;
 	background-repeat:no-repeat;
 	width:100%;
@@ -48,7 +47,7 @@
   height: 65px;
 	margin: 0 auto;
 	position:relative;
-	font-family:"Gotham2";
+	font-family:"Gotham-Black";
 	color:white;
 }
 
@@ -57,7 +56,7 @@
 }
 
 #about2 .title {
-	top:30%;
+	top:23%;
 }
 
 .downArrowContainer {
@@ -87,13 +86,15 @@
 	position:relative;
 	width:960px;
 	margin: 0 auto;
-	top: 40%;
-	
+	top: 35%;
+	padding:10px;
 	font-family:"Gotham-Light";
 	font-size:14px;
-	text-align:center;	
-	color:#D8D8D8;
-	
+	text-`:center;	
+	color:#ffffff;
+	background-color: rgba(0, 0, 0, .5);
+
+
 }
 
 #about3 .aboutText {
@@ -102,11 +103,12 @@
 	font-size:13px;
 	line-height:20px;
 	width:290px;
-	height: 130px;
+	height: 160px;
 	padding:15px;
 	overflow:hidden;
 	text-align:left;
 	font-family:"Gotham-Light";
+	background-color: rgba(0, 0, 0, .5);
 
 }
 #about3 .aboutText h2 {
@@ -118,7 +120,7 @@
 	position:relative;
 	margin:0 auto;
 	width:1024px;
-	top:20%;
+	top:22%;
 }
 .background_img {
 	opacity:.7;
