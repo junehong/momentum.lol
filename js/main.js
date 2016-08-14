@@ -219,12 +219,12 @@ function MoveToSlide(p,c){
 
 
 		// Set the blur of the background based on the child index
-		$('#aboutImage').css('-webkit-filter','blur('+(childSlideIndex * 5)+'px)');
-		$('#aboutImage').css('filter','blur('+(childSlideIndex * 5)+'px)');
+		//$('#aboutImage').css('-webkit-filter','blur('+(childSlideIndex * 5)+'px)');
+		//$('#aboutImage').css('filter','blur('+(childSlideIndex * 5)+'px)');
 
 		// Move the background image position based on child index
-		var n = '-'+(childSlideIndex * 50) + "px";
-		$('#aboutImage').css('background-position-y',n);
+		//var n = '-'+(childSlideIndex * 50) + "px";
+		//$('#aboutImage').css('background-position-y',n);
 
 		
 	} else if (parentSlideIndex == 1){ // Work slides selected.
@@ -288,9 +288,9 @@ function MoveToSlide(p,c){
 		$('#momentumLogo').css('background-image','url("css/img/logo_black.svg")');
 		var scrollTop = (maxWorkSlides)  * h + $('#aboutImage').innerHeight(); 
 		$('body').stop(true,true); 
-		$('body').scrollTop(scrollTop - h); 
+		$('body').scrollTop(scrollTop); 
 		$('body').animate({
-			scrollTop: scrollTop 
+			//scrollTop: scrollTop 
 		}, {
 			duration: 500
 		}, function () { 

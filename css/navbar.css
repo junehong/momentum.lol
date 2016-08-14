@@ -12,30 +12,46 @@
 }
 
 #navBar ul {
+	list-style:none;
 	height:20px;
 	float:left;
 	width:100%;
 }
 
 #navBar li {
-	margin: 0 60px;
+	margin: 0 40px;
 	font-family: "Gotham-Bold";
-	font-size:14px;
+	font-size:12px;
 }
 
 .topMenu {
+	position:relative;
 	display:inline-block;
-	width: 0px;
-	transition: width 0.5s ease-in-out;
+	
     white-space: nowrap;
   
   }
 
 .topMenu:hover {
 	cursor:pointer;
-	width: 50px;
+}
+
+.topMenu:hover .bottom {
+	cursor:pointer;
+	width: 100%;
+	transition: width 0.5s ease-in-out;
 	
 }
+.topMenu .bottom {
+	position:absolute;
+	top:16px;
+	width:0;
+	transition: width 0.5s ease-in-out;
+	height:3px;
+	background:white;
+
+}
+
 
 .topMenu.slected:not(:first-of-type)  {
 	border-bottom:3px solid rgba(1,1,1,0);
