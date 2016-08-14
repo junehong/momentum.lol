@@ -69,10 +69,6 @@
 }
 
 
-.topMenu.selected_black:not(:first-of-type) {
-	border-bottom:3px solid rgba(0,0,0,0);
-}
-
 
 /*
 #navBar li.selected:not(:first-of-type)  {
