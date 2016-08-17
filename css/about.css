@@ -1,6 +1,6 @@
 
 #aboutImage {
-	background-image:url('img/b3_lights.jpg');
+	background-image:url('img/b1_flower.jpg');
 	background-size:cover;
 	background-repeat:no-repeat;
 	width:100%;
@@ -34,27 +34,31 @@
   font-size: 48px;
   line-height: 1.35;
   text-align: center;
-  color: #ffffff;
+  color: #000;
 	display:block;
 	position:absolute;
 }
 
 #aboutSlides .title {
-  height: 65px;
-	margin: 0 auto;
-	position:relative;
+  	margin: 0 auto;
+	position:absolute;
+	left: 15%;
 	font-family:"Gotham-Black";
-	color:white;
 }
+
+
 
 #about1 .title {
 	top:40%;
 }
 
 #about2 .title {
-	top:23%;
+	top:20%;
 }
 
+#about3 .title {
+	top:17%;
+}
 
 
 
@@ -64,7 +68,7 @@
 	width:100%;
 }
 .downArrow {
-	background-image:url('img/downarrow.png');
+	background-image:url('img/downarrow_blk.png');
 	position:relative;
 	z-index:40;
 	width:20px;	
@@ -82,9 +86,6 @@
 	cursor:pointer;
 }
 
-#about3 .title {
-	top:20%;
-}
 
 #about2 .aboutText {
 	position:relative;
@@ -92,14 +93,14 @@
 	margin: 0 auto;
 	top: 35%;
 	padding:10px;
-	font-family:"Gotham-Light";
+	font-family:"Gotham-Book";
 	font-size:14px;
-	text-`:center;	
-	color:#ffffff;
-	background-color: rgba(0, 2, 24, .5);
-
+	ttext-align:center;	
+	color:#000;
+	background-color: rgba(255, 255, 255, .5);
 
 }
+
 
 #about3 .aboutText {
 	position:relative;
@@ -111,8 +112,8 @@
 	padding:15px;
 	overflow:hidden;
 	text-align:left;
-	font-family:"Gotham-Light";
-	background-color: rgba(0, 2, 24, .5);
+	font-family:"Gotham-Book";
+	background-color: rgba(255, 255, 255, .5);
 
 }
 #about3 .aboutText h2 {
@@ -124,7 +125,7 @@
 	position:relative;
 	margin:0 auto;
 	width:1024px;
-	top:22%;
+	top:30%;
 }
 .background_img {
 	opacity:.7;
@@ -145,7 +146,7 @@
   font-size: 48px;
   line-height: 1.35;
   text-align: center;
-  color: #ffffff;
+  color: #000;
 	margin: 0 auto;
 	top:40%;
 	display:block;

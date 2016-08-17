@@ -15,22 +15,22 @@
 	color:#333333;
 }
 
-#contactInner h1 {
+#contactSlide h1 {
+	text-align:center;
 	font-size:40px;
 	font-family:"Gotham-Black";
 	letter-spacing:1.5px;
 }
 
-#contactInner p {
-	font-size:22px;	
+#contactInner p, #contactInner_kr p {
+	font-size:18px;	
 	font-family:"Gotham";
 	font-weight:lighter;
-	color:#333333;
 }
 
 
 
-#contactForm input  {
+#contactForm input, #contactForm_kr input  {
 	border: 0;
 	display:block;
 	width:100%;
@@ -43,7 +43,7 @@
 	font-family:"Gotham-Book";	
 }
 
-#contactForm select {
+#contactForm select, #contactForm_kr select {
     padding: 0;
     margin: 0;
     width: 100%;
@@ -71,7 +71,7 @@
 	background-repeat:no-repeat;
 
 }
-#contactForm textarea {
+#contactForm textarea, #contactForm_kr textarea {
 	font-size:15px;
 	color:#999;
 	width:100%;
@@ -82,7 +82,7 @@
 	font-family:"Gotham-Book";	
 }
 
-#contactForm button {
+#contactForm button, #contactForm_kr button {
 	font-family:"Gotham2";
 	float:left;
 	margin:5px;
@@ -99,6 +99,12 @@
 }
 
 #contactForm button:hover {
+	cursor:pointer;
+	background-color:#333;
+	color:#fff;
+	font-family:"Gotham_Book";
+}
+#contactForm_kr button:hover {
 	cursor:pointer;
 	background-color:#333;
 	color:#fff;

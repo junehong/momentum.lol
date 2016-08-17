@@ -11,7 +11,7 @@ var shiftPadding = 100; // This is the amount each slide moves up or down betwee
 var resizeTimeoutFn;
 $(document).ready(function(){
 
-MoveToSlide(0,0);
+	MoveToSlide(0,0);
 
 
 	$('#about1 .titleContainer .title').textillate({
@@ -185,10 +185,9 @@ function MoveToSlide(p,c){
 	if (parentSlideIndex == 0){ // The current slide was "About".
 		 // Fade in the "About" slide.	
 		$('#aboutSlides').css('opacity','1');
-
-		$('#navBar').css('color','white'); // Because background is black on About slide.
-		$('#navBar').css('background-color','transparent'); //
-		$('#momentumLogo').css('background-image','url("css/img/logo_white.svg")');
+		
+		SetNavigationColor("black");
+		
 
 		// Make sure we are scrolled to the TOP.
 		$(window).scrollTop(0);
@@ -232,10 +231,9 @@ function MoveToSlide(p,c){
 		$('#workSlides').css('opacity','1');
 
 		// Because background is white on Work slide.
-		$('#navBar').css('color','black'); 
-		$('#navBar').css('background-color','white'); 
-		$('#momentumLogo').css('background-image','url("css/img/logo_black.svg")');
-		
+		SetNavigationColor("black");	
+
+
 		// Calc how far we should scroll for each work child, and animate it.
 		var scrollTopTarget = (childSlideIndex + 1)  * h - shiftPadding; 
 		$('body').stop(true,true); 
@@ -283,9 +281,7 @@ function MoveToSlide(p,c){
 
 	} else if (parentSlideIndex == 2){
 		$('#contactSlide').css('opacity','1');	
-		$('#navBar').css('color','black'); // Because background is black on Contact slide.
-		$('#navBar').css('background-color','white'); 
-		$('#momentumLogo').css('background-image','url("css/img/logo_black.svg")');
+		SetNavigationColor("black");	
 		var scrollTop = (maxWorkSlides)  * h + $('#aboutImage').innerHeight(); 
 		$('body').stop(true,true); 
 		$('body').scrollTop(scrollTop); 
@@ -391,3 +387,18 @@ $.extend($.easing,
         return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
     }
 });
+
+function SetNavigationColor(color){
+	if (color == "white"){
+		$('#navBar').css('color','white'); // Because background is black on About slide.
+		$('#navBar').css('background-color','transparent'); //
+		$('#momentumLogo').css('background-image','url("css/img/logo_white.svg")');
+		$('.bottom').css('background-color','white');
+	} else {
+		$('#navBar').css('color','black'); 
+		$('#navBar').css('background-color','white'); 
+		$('#momentumLogo').css('background-image','url("css/img/logo_black.svg")');
+		$('.bottom').css('background-color','black');
+	}	
+
+}

@@ -1,0 +1,33 @@
+.english {
+	color:#000;
+}
+.korean {
+	color:#000;
+	display:none;
+
+}
+
+
+
+#langSelector {
+	display:block;
+}
+#langSelector .unselected {
+	cursor:pointer;
+}
+
+
+#langSelector .unselected:hover {
+	cursor:pointer;
+	text-decoration: underline;;
+}
+
+#langSelector .selected:hover{
+	cursor:normal;
+}
+
+#langSelector .selected {
+	font-family:"Gotham-Black";
+}
+
+
