@@ -111,7 +111,8 @@ $(document).ready(function(){
 	$(window).resize(function(){
 		clearTimeout(resizeTimeoutFn);
 	//	MoveToSlide(parentSlideIndex,childSlideIndex);
-		resizeTimeoutFn = setTimeout(function(){MoveToSlide(parentSlideIndex,childSlideIndex);},1000); // a short time after user finishes resizing window, move to the appropriate slide.
+		// Todo : on resize do not use white sheet FX
+		resizeTimeoutFn = setTimeout(function(){MoveToSlide(parentSlideIndex,childSlideIndex);},100); // a short time after user finishes resizing window, move to the appropriate slide.
 //
 	});
 	

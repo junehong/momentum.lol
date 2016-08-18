@@ -270,52 +270,43 @@
 }
 
 
-#smw_img {
-	background-image:url('img/work_speechmonk.png');
-}
 
 
 
 
-#crossfade > img { 
-    width: 535px;
-    height: 335px;
-    position: absolute;
-    color: transparent;
-    text-align: center;
-    margin-left: 216px;
-    margin-top: -1px;
-    opacity: 0;
+
+.crossfade > div { 
+	opacity: 0;
     z-index: 0;
 
     -webkit-backface-visibility: hidden;
-    -webkit-animation: imageAnimation 30s linear infinite 0s;
-    -moz-animation: imageAnimation 30s linear infinite 0s;
-    -o-animation: imageAnimation 30s linear infinite 0s;
-    -ms-animation: imageAnimation 30s linear infinite 0s;
-    animation: imageAnimation 30s linear infinite 0s; 
+    -webkit-animation: imageAnimation 12s linear infinite 0s;
+    -moz-animation: imageAnimation 12s linear infinite 0s;
+    -o-animation: imageAnimation 12s linear infinite 0s;
+    -ms-animation: imageAnimation 12s linear infinite 0s;
+    animation: imageAnimation 12s linear infinite 0s; 
 }
 
-#crossfade > img:nth-child(2)  {
+.crossfade > div:nth-child(2)  {
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    -o-animation-delay: 3s;
+    -ms-animation-delay: 3s;
+    animation-delay: 3s; 
+}
+.crossfade > div:nth-child(3) {
     -webkit-animation-delay: 6s;
     -moz-animation-delay: 6s;
     -o-animation-delay: 6s;
     -ms-animation-delay: 6s;
     animation-delay: 6s; 
 }
-#crossfade > img:nth-child(3) {
-    -webkit-animation-delay: 12s;
-    -moz-animation-delay: 12s;
-    -o-animation-delay: 12s;
-    -ms-animation-delay: 12s;
-    animation-delay: 12s; 
-}
-#crossfade > img:nth-child(4) {
-    -webkit-animation-delay: 18s;
-    -moz-animation-delay: 18s;
-    -o-animation-delay: 18s;
-    -ms-animation-delay: 18s;
-    animation-delay: 18s; 
+.crossfade > div:nth-child(4) {
+    -webkit-animation-delay: 9s;
+    -moz-animation-delay: 9s;
+    -o-animation-delay: 9s;
+    -ms-animation-delay: 9s;
+    animation-delay: 9s; 
 }
 
 
