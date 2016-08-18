@@ -11,7 +11,7 @@ var shiftPadding = 100; // This is the amount each slide moves up or down betwee
 var resizeTimeoutFn;
 $(document).ready(function(){
 
-	MoveToSlide(1,3);
+	MoveToSlide(0,0);
 
 
 	$('#about1 .titleContainer .title').textillate({
@@ -187,7 +187,7 @@ function MoveToSlide(p,c){
 		 // Fade in the "About" slide.	
 		$('#aboutSlides').css('opacity','1');
 		
-		SetNavigationColor("black");
+		SetNavigationColor("white");
 		
 
 		// Make sure we are scrolled to the TOP.
@@ -391,10 +391,10 @@ $.extend($.easing,
 
 function SetNavigationColor(color){
 	if (color == "white"){
-		$('#navBar').css('color','white'); // Because background is black on About slide.
+		$('#navBar').css('color','black'); // Homepage and About without background color
 		$('#navBar').css('background-color','transparent'); //
-		$('#momentumLogo').css('background-image','url("css/img/logo_white.svg")');
-		$('.bottom').css('background-color','white');
+		$('#momentumLogo').css('background-image','url("css/img/logo_black.svg")');
+		$('.bottom').css('background-color','black');
 	} else {
 		$('#navBar').css('color','black'); 
 		$('#navBar').css('background-color','white'); 

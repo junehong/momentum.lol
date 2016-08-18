@@ -41,23 +41,29 @@
 
 #aboutSlides .title {
   	margin: 0 auto;
-	position:absolute;
-	left: 15%;
-	font-family:"Gotham-Black";
+	font-family:"Gotham-Black", "AppleSD-Extra";
 }
 
 
 
 #about1 .title {
 	top:40%;
+	position:absolute;
+	left: 11%;
+
 }
 
 #about2 .title {
 	top:20%;
+	position:relative;
+	width:80%;
+
 }
 
 #about3 .title {
 	top:17%;
+	position:relative;
+	width:80%;
 }
 
 
@@ -89,7 +95,7 @@
 
 #about2 .aboutText {
 	position:relative;
-	width:960px;
+	width:80%;
 	margin: 0 auto;
 	top: 35%;
 	padding:10px;
@@ -124,8 +130,8 @@
 #about3TextContainer{
 	position:relative;
 	margin:0 auto;
-	width:1024px;
-	top:30%;
+	width:80%;
+	top:20%;
 }
 .background_img {
 	opacity:.7;
