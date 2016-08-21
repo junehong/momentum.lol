@@ -3,10 +3,10 @@ if (annyang) {
   var commands = {
     'hello': function() {
 		alert('hello');
-    }
+    
     'what': function() {
 		alert('what');
-    }
+    
     'test': function() {
 		alert('test');
     }
