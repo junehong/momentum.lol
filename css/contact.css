@@ -8,7 +8,7 @@
 }
 
 #contactInner, #contactInner_kr {
-	width:720px;
+	width:70%;
 	font-family:"Gotham-Light";
 	margin: 0 auto;
 	text-align:center;
@@ -114,7 +114,7 @@
 
 #contactAfter {
 	display:none;
-	width:720px;
+	width:80%;
 	font-family:"Gotham-Light";
 	margin: 0 auto;
 	margin-top:70px;

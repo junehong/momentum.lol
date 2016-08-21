@@ -41,3 +41,9 @@
 }
 
 
+@font-face {
+  font-family: "AppleSD-Extra";
+  font-weight: bold;
+  src: url('fonts/AppleSDGothicNeo-ExtraBold.otf') format('truetype'); 
+}
+

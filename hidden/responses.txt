@@ -7,3 +7,13 @@ DATETIME,NAME,EMAIL,MESSAGE
 08/06/2016 06:48:06 pm,charlie,charlie@test.tom,Message
 08/06/2016 06:50:34 pm,charlie,charlie@c.com,Message
 08/06/2016 07:23:31 pm,charie,charlie@test.com,Interested in project reachout,Message
+08/06/2016 09:07:06 pm,june,vinosh.hong@gmail.com,General inquiry,hahaha it looks nice
+08/18/2016 08:08:16 am,asdf,name@domain.com,I have an idea! Tell us more about what you would like to build.,Message
+08/18/2016 08:12:13 am,blah,blah2,test,no
+08/18/2016 08:15:47 am,blah,blah2,test,no
+08/18/2016 08:15:52 am,blah,blah2,test이제는 꽃 피울 시,no
+08/18/2016 08:15:55 am,blah,blah2,test이제는 꽃 피울 시,no
+08/18/2016 08:20:29 am,이름,email@email.com,아이디어만 있습니다.,메세지
+08/18/2016 08:24:48 am,이름,name@domain.com,아이디어만 있습니다.,메세지
+08/18/2016 08:31:54 am,asdf,asdf@gm.com,I have an idea! Tell us more about what you would like to build.,Message
+08/18/2016 08:33:31 am,asdf,testcontactafter@gmail.com,I have an idea! Tell us more about what you would like to build.,Message

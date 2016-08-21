@@ -57,8 +57,8 @@
 .workImage2 {
 	position:absolute;
 	width:960px;
-	height:44%;
-	bottom:24%; /* this seems to work */
+	height:40%;
+	bottom:25%; /* this seems to work */
 	background-size:contain;
 	background-repeat:no-repeat;
 	background-image:url('img/computer_bg_1.png');
@@ -277,14 +277,14 @@
 
 .crossfade > div { 
 	opacity: 0;
-    z-index: 0;
+    z-index: 0;	
 
     -webkit-backface-visibility: hidden;
-    -webkit-animation: imageAnimation 12s linear infinite 0s;
-    -moz-animation: imageAnimation 12s linear infinite 0s;
-    -o-animation: imageAnimation 12s linear infinite 0s;
-    -ms-animation: imageAnimation 12s linear infinite 0s;
-    animation: imageAnimation 12s linear infinite 0s; 
+    -webkit-animation: imageAnimation 15s linear infinite 0s;
+    -moz-animation: imageAnimation 15s linear infinite 0s;
+    -o-animation: imageAnimation 15s linear infinite 0s;
+    -ms-animation: imageAnimation 15s linear infinite 0s;
+    animation: imageAnimation 15s linear infinite 0s; 
 }
 
 .crossfade > div:nth-child(2)  {
@@ -309,6 +309,13 @@
     animation-delay: 9s; 
 }
 
+.crossfade > div:nth-child(5) {
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
 
 @-webkit-keyframes imageAnimation { 
     0% { opacity: 0;
@@ -365,7 +372,7 @@
 /* Slide 4 Super Math World */
 
 #smw_container {
-	background-color:#FF3D31;
+	background-color:#F15424;
 	height:100%;
 	position:relative;
 	overflow:hidden;
@@ -376,7 +383,7 @@
 	width:100%;
 	height:150px;
 	color:white;
-	background-color:#FF3D31;
+	background-color:#F15424;
 }
 
 #smw_text  p {
