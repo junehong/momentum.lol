@@ -4,10 +4,10 @@ if (annyang) {
     'hello': function() {
 		alert('hello');
     
-    'what': function() {
+   }, 'what': function() {
 		alert('what');
     
-    'test': function() {
+    }, 'test': function() {
 		alert('test');
     }
   };
