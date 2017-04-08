@@ -1,6 +1,6 @@
 
 #aboutImage {
-	background-image:url('img/b1_flower.jpg');
+	/*background-image:url('img/b1_flower.jpg');*/
 	background-size:cover;
 	background-repeat:no-repeat;
 	width:100%;
@@ -41,15 +41,15 @@
 
 #aboutSlides .title {
   	margin: 0 auto;
-	font-family:"Gotham-Black", "AppleSD-Extra";
+	font-family:"Gotham-Black", "AppleSD-Extra";  
 }
 
 
 
 #about1 .title {
 	top:40%;
-	position:absolute;
-	left: 11%;
+	position:relative;
+	width:80%;
 
 }
 
@@ -101,7 +101,7 @@
 	padding:10px;
 	font-family:"Gotham-Book";
 	font-size:14px;
-	ttext-align:center;	
+	text-align:center;	
 	color:#000;
 	background-color: rgba(255, 255, 255, .5);
 
