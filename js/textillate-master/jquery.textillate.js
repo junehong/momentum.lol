@@ -7,7 +7,6 @@
  */
 
 (function ($) {
-  console.log('started!');
   "use strict";
 
   function isInEffect (effect) {

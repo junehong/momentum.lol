@@ -24,6 +24,7 @@
 	font-size:12px;
 }
 
+
 .topMenu {
 	position:relative;
 	display:inline-block;
@@ -152,6 +153,9 @@
 .verticalDots ul > li {
 	height:100%;
 	text-align:center;
+}
+.verticalDots ul > li:hover {
+	cursor:pointer;
 }
 
 .verticalDots ul > li > div {

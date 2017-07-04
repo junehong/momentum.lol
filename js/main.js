@@ -9,9 +9,44 @@ var scrolling = false;
 var shiftPadding = 100; // This is the amount each slide moves up or down between the white screen transition phase. The slide shifts this much as the white one is coming across
 
 var resizeTimeoutFn;
-$(document).ready(function(){
 
-	MoveToSlide(0,0);
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+		BackOneSlide(600);
+		e.preventDefault();
+		//up 
+    }
+    else if (e.keyCode == '40') {
+		AdvanceOneSlide(600);
+		//MoveToSlide(parentSlideIndex,childSlideIndex+1); //
+		e.preventDefault();
+		//console.log('moved! parent,child;"'+parentSlideIndex+","+childSlideIndex);
+		// down 
+    }
+
+}
+
+
+
+$(document).ready(function(){
+	// detect key presses for arrow keys
+	/* left = 37
+	 * up = 38
+	 * right = 39
+	 * down = 40
+	*/
+	document.onkeydown = checkKey;
+
+	$('.verticalDots ul > li').click(function(){
+		if (parentSlideIndex == 1 && childSlideIndex != $(this).index()){
+			MoveToSlide(1,$(this).index());
+		}
+	});
+
+	MoveToSlide(0,0,false);
 
 
 	$('#about1 .titleContainer .title').textillate({
@@ -52,6 +87,7 @@ $(document).ready(function(){
 		    delay: 50,
 
 		    // set to true to animate all the characters at the same time
+		    //		console.log('moved! parent,child;"'+parentSlideIndex+","+childSlideIndex);
 		    sync: false,
 
 		    // randomize the character sequence 
@@ -91,7 +127,7 @@ $(document).ready(function(){
 
 	$('body').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
 	$('#container').css('padding-right',(Element.offsetWidth - Element.clientWidth)+'px');
-	$('.downArrow').click(function(){
+	$('.downArrowClickable').click(function(){
 		// This only exists on about 1 (index 0,1) so scroll appropriately
 		MoveToSlide(parentSlideIndex,childSlideIndex+1); //
 	});
@@ -124,37 +160,9 @@ $(document).ready(function(){
 			return;
 		}	
 		if (deltaScrollY < 0) { // user scrolled down
-			if (parentSlideIndex == 0){ // ABOUT
-				if (childSlideIndex < maxAboutSlides-1) { 
-					MoveToSlide(0,childSlideIndex+1);
-				} else {
-					MoveToSlide(1,0);
-				}
-			} else if (parentSlideIndex == 1){ // WORK
-				if (childSlideIndex < maxWorkSlides-1){
-					MoveToSlide(1,childSlideIndex+1);
-				} else {
-					MoveToSlide(2,0);
-				}
-			} else { // CONTACT
-				// User could not slide down. Do nothing
-			}
+			AdvanceOneSlide();
 		} else if (deltaScrollY > 0){ // user scrolled up
-			if (parentSlideIndex == 0){ // ABOUT
-				if (childSlideIndex > 0) { 
-					MoveToSlide(0,childSlideIndex-1); // Move up one About slide.
-				} else {
-					// User was at top of page, could not slide up. Do nothing.
-				}
-			} else if (parentSlideIndex == 1){ // WORK
-				if (childSlideIndex > 0 ){
-					MoveToSlide(1,childSlideIndex-1); // Move up one work slide.
-				} else {
-					MoveToSlide(0, maxAboutSlides-1); // Move up to the last About slide.
-				}
-			} else { // CONTACT
-				MoveToSlide(1,maxWorkSlides-1); // Move to the last work slide.
-			}
+			BackOneSlide();
 		}
 
 	});
@@ -169,14 +177,59 @@ $(document).ready(function(){
 	
 });
 
+
+function AdvanceOneSlide(scrollTimeoutMS=1200){
+	if (scrolling) {
+		return;
+	}
+	if (parentSlideIndex == 0){ // ABOUT
+		if (childSlideIndex < maxAboutSlides-1) { 
+			MoveToSlide(0,childSlideIndex+1,true,scrollTimeoutMS);
+		} else {
+			MoveToSlide(1,0,true,scrollTimeoutMS);
+		}
+	} else if (parentSlideIndex == 1){ // WORK
+		if (childSlideIndex < maxWorkSlides-1){
+			MoveToSlide(1,childSlideIndex+1,true,scrollTimeoutMS);
+		} else {
+			MoveToSlide(2,0,true,scrollTimeoutMS );
+		}
+	} else { // CONTACT
+		// User could not slide down. Do nothing
+	}
+
+}
+
+function BackOneSlide(scrollTimeoutMS=1200){
+	if (scrolling) return;
+	if (parentSlideIndex == 0){ // ABOUT
+		if (childSlideIndex > 0) { 
+			MoveToSlide(0,childSlideIndex-1,true,scrollTimeoutMS); // Move up one About slide.
+		} else {
+			// User was at top of page, could not slide up. Do nothing.
+		}
+	} else if (parentSlideIndex == 1){ // WORK
+		if (childSlideIndex > 0 ){
+			MoveToSlide(1,childSlideIndex-1,true,scrollTimeoutMS); // Move up one work slide.
+		} else {
+			MoveToSlide(0, maxAboutSlides-1,true,scrollTimeoutMS); // Move up to the last About slide.
+		}
+	} else { // CONTACT
+		MoveToSlide(1,maxWorkSlides-1,true,scrollTimeoutMS); // Move to the last work slide.
+	}
+
+}
+
 var allowScrollingTimeout;
-function MoveToSlide(p,c){
+function MoveToSlide(p,c,setScrolling=true,scrollTimeoutMS=1200){
 	parentSlideIndex = p;
 	childSlideIndex = c; 
 	if (scrolling) return;
-	scrolling = true;
-	clearTimeout(allowScrollingTimeout);
-	allowScrollingTimeout = setTimeout(function(){ scrolling = false; }, 1200);
+	if (setScrolling) {
+		scrolling = true; // sometimes e.g. on pageload we don't want scrolling to happen.
+		clearTimeout(allowScrollingTimeout);
+		allowScrollingTimeout = setTimeout(function(){ scrolling = false; }, scrollTimeoutMS);
+	}
 	// Hide slides by opactiy "0". We'll set the current parent slide opacity to "1" in a sec.	
 	$('#aboutSlides').css('opacity','0');	
 	$('#workSlides').css('opacity','0');	
@@ -241,7 +294,7 @@ function MoveToSlide(p,c){
 		var dir = $('body').scrollTop() > scrollTopTarget ? -1 : 1; // determine if we were sliding up or down. "1" is scrolling "down"
 		if ($('body').scrollTop() < h && childSlideIndex == 0) {
 			$('body').scrollTop(h - shiftPadding +  $('#header').outerHeight()); // "snap" to the first work slide, if scrolling down from about.
-			console.log('snap');
+			// console.log('snap');
 			dir = 1; // also override 'dir' in this case because the comparitive logic doesnt work for the first case (scrolltop is still smaller since we haven't actually scrolled down the page during about navigation)
 		}
 		var offset = shiftPadding / 2 * dir;
@@ -252,7 +305,7 @@ function MoveToSlide(p,c){
 		var pauseDuration = 200;	
 		// Show the white fx screen if scrolling *between* work slides, but not in or out of work slides.
 		if ((dir == 1 && childSlideIndex != 0) || (dir == -1 && childSlideIndex != maxWorkSlides - 1)){ // this would == false if moving from about or contact slides to workslides. 
-			console.log('offset:'+offset);
+			//console.log('offset:'+offset);
 			WhiteSheetFX(dir,100,1000);// pauseDuration,whiteSheetDuration);	
 			$('body').animate({	
 				scrollTop: scrollTopTarget - h * dir + offset }, 
@@ -268,7 +321,7 @@ function MoveToSlide(p,c){
 			);
 		} else {
 			// Scroll "normally" without the white sheet fx
-			console.log('norm scroll');
+			// console.log('norm scroll');
 			$('body').animate({		
 				scrollTop: scrollTopTarget 		},
 				scrollDuration/2 ); 

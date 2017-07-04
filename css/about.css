@@ -70,25 +70,33 @@
 
 .downArrowContainer {
 	position:absolute;
-	bottom:calc(0% + 40px);
+	bottom:calc(0% + 20px);
 	width:100%;
 }
 .downArrow {
 	background-image:url('img/downarrow_blk.png');
 	position:relative;
-	z-index:40;
 	width:20px;	
 	height:12px;
 	margin:0 auto;
-	bottom:calc(0% + 40px);
+	top:28px;
 	display:block;
+		
+	-webkit-animation: bounce 3s infinite ease-in-out;
+}
+
+.downArrowClickable {
+	z-index:40;
+	position:relative;
+	margin:0 auto;
+	bottom:calc(0% + 40px);
+	width:80px;	
+	height:48px;
 	
-	-webkit-animation: bounce 2s infinite ease-in-out;
 }
 
 
-
-.downArrow:hover {
+.downArrowClickable:hover {
 	cursor:pointer;
 }
 
